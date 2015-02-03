@@ -87,7 +87,7 @@ public class PlayerJoinGameEvent extends CancellablePlayerEvent implements Cause
 	
 	/**
 	 * Sets the location where the player spawns in the arena
-	 * @param newJoinLocation The new spawn location of the player in the arena
+	 * @param joinLocation The new spawn {@link Location} of the player in the arena
 	 */
 	public void setJoinLocation(Location joinLocation) {
 		if (joinLocation == null) {
