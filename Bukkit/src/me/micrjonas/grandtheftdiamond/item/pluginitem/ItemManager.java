@@ -14,9 +14,12 @@ import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.listener.player.PlayerInteractListener;
+import me.micrjonas.grandtheftdiamond.messenger.Messenger;
 
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 
@@ -43,6 +46,20 @@ public class ItemManager implements FileReloadListener {
 		return instance;
 	}
 	
+	/**
+	 * Adds the item to the {@link Player}'s {@link Inventory} or spawns it for him. Also sends a message
+	 * 	to the {@link Player}
+	 * @param p The {@link Player} who should get the item
+	 * @param item The item to add
+	 * @param amount The amount of items
+	 * @throws IllegalArgumentException Thrown if {@code item} is {@code null}
+	 * @see PluginItem#giveToPlayer(Player, int)
+	 */
+	public static void giveToPlayer(Player p, PluginItem item, int amount) throws IllegalArgumentException {
+		item.giveToPlayer(p, amount);
+		Messenger.getInstance().sendPluginMessage(p, "itemReceived", new String[]{"%item%"}, new String[]{item.getName()});
+	}
+	
 	private static Map<String, ConfigurationSection> getEntries(FileConfiguration fileConfiguration, String path, String subPath) {
 		Map<String, ConfigurationSection> entries = new HashMap<String, ConfigurationSection>();
 		for (String absolutePath : fileConfiguration.getConfigurationSection(path).getKeys(false)) {
@@ -55,10 +72,6 @@ public class ItemManager implements FileReloadListener {
 			}
 			if (configSection != null) {
 				entries.put(absolutePath, configSection);
-			}
-			else {
-				// May be config value
-				//fileConfiguration.set(CARS_PATH + "." + absolutePath, null);
 			}
 		}
 		return entries;
