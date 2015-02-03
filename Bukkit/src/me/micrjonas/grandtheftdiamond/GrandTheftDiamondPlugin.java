@@ -62,6 +62,7 @@ import me.micrjonas.grandtheftdiamond.data.TemporaryPluginData;
 import me.micrjonas.grandtheftdiamond.data.player.PlayerDataUser;
 import me.micrjonas.grandtheftdiamond.data.storage.Storable;
 import me.micrjonas.grandtheftdiamond.data.storage.StorableManager;
+import me.micrjonas.grandtheftdiamond.data.storage.Storables;
 import me.micrjonas.grandtheftdiamond.gang.GangManager;
 import me.micrjonas.grandtheftdiamond.house.HouseManager;
 import me.micrjonas.grandtheftdiamond.item.ItemManager;
@@ -550,7 +551,7 @@ public class GrandTheftDiamondPlugin extends JavaPlugin {
 		FileConfiguration dataFile = FileManager.getInstance().getFileConfiguration(file);
 		StorableManager<? extends Storable> manager = getStorableManager(file);
 		if (manager != null) {
-			manager.saveObjects(dataFile);
+			Storables.saveRegisteredObjects(manager, dataFile, "");
 		}
 	}
 	
