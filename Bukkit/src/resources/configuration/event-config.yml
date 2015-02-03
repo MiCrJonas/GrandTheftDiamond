@@ -1,0 +1,70 @@
+kill:
+  civilianKilled:
+    civilian:
+      wantedLevel: 1
+      experience: 0
+      money: 0
+    gangster:
+      wantedLevel: 1
+      experience: 20
+      money: 50
+    cop:
+      wantedLevel: 2
+      experience: 0
+      money: -50
+  copKilled:
+    civilian:
+      wantedLevel: 1
+      experience: 0
+      money: -200
+    gangster:
+      wantedLevel: 1
+      experience: 20
+      money: 50
+    cop:
+      wantedLevel: 2
+      experience: 0
+      money: -50
+    jailCopAfterKillingCop: true
+    jailCopAfterKillingNonGangster: true
+    jailTime: 30
+    money: -200
+robbing:
+  safe:
+    enabled: true
+    block: IRON_BLOCK
+    robTime: 10
+    timeToNextRob:
+      min: 180
+      max: 240
+    wantedLevel: 2
+    experience: 20
+    money:
+      min: 200
+      max: 300
+jail:
+  jailTime: '%wantedLevel% * 20 + 10'
+  moneyBalance: '%wantedLevel% * 50'
+  arrest:
+    maxDistanceToGangster: 5
+    experienceForCop: 30
+    moneyForCop: '%wantedLevel% * 10'
+  detain:
+    maxDistanceToGangster: 5
+    experienceForCop: 50
+    moneyForCop: '%wantedLevel% * 15'
+damage:
+  disableCopDamageByCop: true
+  disableNotGangsterDamageByCop: false
+death:
+  killed:
+    money: -50
+    experience: 0
+  otherReason:
+    money: -100
+    experience: -20
+corrupt:
+  useMinAmountPerWantedLevel: true
+  minAmountPerWantedLevel: 0
+  minAcceptsPerPlayerBeforeDisable: 5
+  maxSamePlayerPerCentPlayers: 30

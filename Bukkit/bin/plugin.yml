@@ -1,0 +1,21 @@
+name: GrandTheftDiamond
+main: me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin
+version: Beta_1.11.8
+author: MiCrJonas1997
+description: The GTA plugin for Minecraft!
+website: http://dev.bukkit.org/bukkit-plugins/grand-theft-diamond/
+softdepend:
+- BarAPI
+- Citizens
+- Dynmap
+- NametagEdit
+- Vault
+commands:
+  gtd: 
+    description: Use '/gtd ? [page]' for the plugin's command help
+    aliases:
+    - gta
+    - grandtheftauto
+    - grandtheftdiamond
+    - gtdiamond
+    - gt-diamond

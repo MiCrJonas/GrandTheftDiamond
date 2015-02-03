@@ -1,0 +1,483 @@
+# You can use %amountGTD% and %amountVault% were you can use money %amount%! 
+# But: If you disabled Vault for the specific event, amount is not 0! 
+# Only if Vault is completely disabled, %amountVault% is always 0! 
+# Use '\n' to create a new line
+SingleWords:
+  amount: amount
+  balance: balance
+  changelog: change log
+  chatMode: chat mode
+  chatModes: chat modes
+  civilian: civilian
+  civilians: civilians
+  console: console
+  cooldown: cooldown
+  cop: cop
+  cops: cops
+  dealer: dealer
+  editor: editor
+  gangster: gangster
+  gangsters: gangsters
+  got: got
+  help: help
+  house: house
+  houseIdentifier: house identifier
+  id: id
+  information: information
+  jaildID: jailID
+  job: job
+  jobs: jobs
+  kit: kit
+  language: manguage
+  level: level
+  lost: lost
+  minRadiusToNextCar: min radius to next car
+  mission: mission
+  name: name
+  none: none
+  object: object
+  objects: objects
+  option: option
+  owner: owner
+  page: page
+  player: player
+  price: price
+  radius: radius
+  reason: reason
+  spawnDelay: spawn delay
+  statsType: stats type
+  team: team
+  time: time
+  updater: updater
+  value: value
+  stats:
+    stats: stats
+    deaths: Deaths
+    exp: Exp
+    jailed_gangsters: Jailed gangsters
+    killed_civilians: Killed civilians
+    killed_cops: Killed cops
+    killed_gangsters: Killed gangsters
+    money: Money
+    respect: Respect
+    robbed_safes: Robbed safes
+    total_wanted_level: Total wanted level
+    wanted_level: Wanted level
+Messages:
+  updateCheckFailed: '&cFailed to check for updates.'
+  noCommand: '&cThis is not a valid command.'
+  wrongUsage: '&cWrong usage.'
+  notAsConsole: '&cYou cant''t do this as console.'
+  wrongUsageAsConsole: '&cWrong usage as console. Add some arguments.'
+  noPermissions: |-
+    &cYou don't have permissions to do this.
+    Required permission: '%permission%'.
+  noPermissionsCommand: |-
+    &cYou don't have permissions to use this command%newLine%(with the specific arguments).
+    Required permission: '%permission%'.
+  noPermissionsUse: |-
+    &cYou don't have permissions to use this.
+    Required permission: '%permission%'.
+  noPermissionsUseObject: |-
+    &cYou don't have permissions to use this object.
+    Required permission: '%permission%'.
+  noPermissionsCreate: |-
+    &cYou don't have permissions to create this.
+    Required permission: '%permission%'.
+  noPermissionsBreak: |-
+    &cYou don't have permissions to break this.
+    Required permission: '%permission%'.
+  noPermissionsOpen: |-
+    &cYou don't have permissions to open this.
+    Required permission: '%permission%'.
+  noPermissionsEdit: |-
+    &cYou don't have permissions to edit this.
+    Required permission: '%permission%'.
+  cannotLeaveGame: '&cThis server is running in only GTD Mode. %newLine%Means: You
+    can''t leave the game. %newLine%&eYour admin can change this in the onlyGTDModeConfig.yml.'
+  playerNotOnline: '&cPlayer is not online.'
+  noOption: '&c%argument% is not a valid option.'
+  noValue: '&c%argument% is not a valid value.'
+  playerNotFound: '&cPlayer not found.'
+  askHasEverPlayed: '&cHas he ever played GTD?'
+  playerNotIngame: '&cPlayer is not ingame.'
+  playerNotJailed: '&cPlayer %player% is not jailed.'
+  playerAlreadyJailed: '&cPlayer %player% is already jailed.'
+  noJailsAvailable: '&cNo jails created.'
+  pageNotFound: '&cPage %page% does not exist.'
+  youNeedSetupMap: '&cYou need to set up the map.'
+  youNeedSetupJail: '&cYou need to setup a jail.'
+  adminNeedSetupMap: '&cYour server admin needs to set up the map.'
+  nothingToAcceptCorrupt: '&cThere is nothing to accept. Or is the player no longer
+    jailed?'
+  objectNotExist: '&cThis object (or ammo) doesn''t exist.'
+  carNotExist: '&cThis car doesn''t exist.'
+  noSignForCooldown: '&cThis is not a sign to set a cooldown.'
+  noFuel: '&cYou don''t have enough fuel to use this.'
+  notEnoughAmmo: '&cYou don''t have enough ammo.'
+  cannotPayToYourself: '&cYou can not pay money to yourself.'
+  notEnoughMoney: '&cYou do not have enough money.'
+  notEnoughMoneyOther: '&c%player% do not have enough money.'
+  notAJob: '&c''%argument%'' is not a valid job.'
+  notAFirearm: '&c''%argument%'' is not a valid firearm.'
+  maxFlightHeightReached: '&cYou reached the maximal flight height.'
+  wantedLevelToLowOther: '&cThe wanted level of %player% is to low. Minimum is %amount%.'
+  cannotRobAsCop: '&cYou cannot rob something as a cop.'
+  notASafe: '&cI''m sorry, but this is not a safe.'
+  robStopped: '&cThe robbing of the actually safe was stopped.'
+  safeAlreadyRobbed: '&cThis safe is already robbed. Come back later.'
+  cannotTaseCops: '&cYou can not tase cops.'
+  cannotHandcuffCops: '&cYou cannot handcuff cops.'
+  cannotHandcuffAsCivilian: '&cYou cannot handcuff someone as Civilian.'
+  alreadyRobbing: '&cYou are already robbing something. Please wait.'
+  objectAdded: '&aA %object% was added to your inventory.'
+  ammoAdded: '&aSome ammo for a(n) %object% was added to your inventory.'
+  drugAdded: '&aDrug %drug% was added to your inventory.'
+  carSpawned: '&aA car (%car%) was spawned for you.'
+  objectAddedOther: '&aA %object% was added to %player%''s inventory.'
+  ammoAddedOther: '&aSome ammo for a(n) %object% was added to %player%''s inventory.'
+  carSpawnedOther: '&aA car (%car%) was spawned for %player%.'
+  alreadyIngame: '&cYou are already in the game.'
+  notIngame: '&cYou are not in the game.'
+  alreadyInMission: '&cYou are already in a mission.'
+  notInMission: '&cYou are not in a mission.'
+  otherNotInMission: '&c%player% is not in a mission.'
+  nothingToConfirm: '&cThere is nothing to confirm.'
+  createArenaFirst: '&cCreate the arena first.'
+  kickPlayersFirst: '&cKick all players out of GTD before doing this.'
+  setBothPoints: '&cPlease set both points. You can do this with an arrow. Right +
+    Left-Click. Enable your wand with ''/gtd wand''.'
+  canNotUseCommands: '&cThis command is blocked in the game.'
+  arenaEnd: '&cThe map ends here.'
+  signTitleTooLong: '&cThe signtitle is too long. (Maximum is 15)'
+  changeInConfig: '&cPlease change it in the config.yml.'
+  signLineMustBeANumber: '&cLine %line% must be a number. Please try again.'
+  signLineWrong: '&cLine %line% is wrong. Please try again.'
+  signLineEmpty: '&cLine %line% is empty. Please try again.'
+  mustBeInArena: '&cYou must be in the arena to do this.'
+  mustBeCop: '&cYou must be a cop to do this.'
+  otherMustBeHandcuffed: '&c%player% must be a civilian who is handcuffed.'
+  notAJail: '&c%argument% is not a valid jail.'
+  mustBeANumber: '&cArgument %argument% must be a number.'
+  mustBeACop: '&cYou must be a cop to do this.'
+  mustBeACopOther: '&c%player% must be a cop.'
+  haveCooldown: '&cThis sign has a cooldown. (%time%)'
+  movedWhileJoin: '&cYou moved. Use /gtd join again.'
+  mustBeIngame: '&cYou must be ingame to do this.'
+  mustBeIngameOther: '&c%player% must be ingame.'
+  notSelfAsPlayer: '&cYou can''t use yourself as player.'
+  jailNotSet: '&cJail %jail% was not set. Create the spawn and at least one cell'
+  jailSpawnNotSet: '&cSet the spawn for jail ''%jail%'' first.'
+  toFarAway: '&c%player% is to far away.'
+  mustBeHigherThan: '&cArgument %argument% must be higher than %amount%.'
+  toMuchCorruptAcceptsPerPlayer: '&c%player% accepted to much corrupts of you.'
+  mustBeJailed: '&cYou must be jailed to do this.'
+  useGun: '&cPlease use a gun.'
+  died: '&eYou died and %lostOrGotMoney% %amountMoney%$ and %lostOrGotExp% %amountExp%
+    exp.'
+  getKilled: '&eYou were killed by %player% and %lostOrGotMoney% %amountMoney%$ and
+    %lostOrGotExp% %amountExp% exp.'
+  killedOther: '&eYou killed %player% and %lostOrGotMoney% %amountMoney%$ and %lostOrGotExp%
+    %amountExp% exp.'
+  alreadyHandcuffed: '&c%player% is already handcuffed.'
+  getHandcuffed: '&eYou get handcuffed by %player%.'
+  noLongerHandcuffed: '&eYou are no longer handcuffed.'
+  getTased: '&eYou were tased by %player%.'
+  tasedOther: '&eYou tased %player%.'
+  releasedFromJail: '&aYou were released from jail.'
+  handcuffedOther: '&eYou handcuffed %player%.'
+  jailedByPlayer: '&cYou were jailed by %player% and lost %amount%$.'
+  jailed: '&cYou were jailed for %time% and lost %amount%$.'
+  jailedOnJoin: '&cYou are still jailed and were teleported back to jail. Time left:
+    %time%'
+  jailedOther: '&eYou jailed %player% and got %amount%$'
+  jailedCommand: '&eYou jailed %player% for %time% seconds in jail %jail%.'
+  arrested: '&eYou were arrested by %player% for %time% and lost %amount%$'
+  arrestedOther: '&eYou arrested %player% for %time% and got %amount%$'
+  detained: '&eYou You were detained by %player%.'
+  detainedOther: '&eYou detained %player%. Take him to a jail(-sign).'
+  notEnoughVaultMoney: '&cThere is not enough money on your server account.'
+  notEnoughGtdMoney: '&cYou don''t have enough money on your GTD-Account.'
+  cannotTazeCops: '&cYou can not taze cops'
+  cannotUseTaserAsCivlian: '&cYou can not use a taser as civilian'
+  cannotHitCopsAsCop: '&cYou can''t hit cops as cop.'
+  cannotHitNonGangsterAsCop: '&cYou can''t hit civilians without wantedlevel as cop.'
+  getTazed: '&eYou get tazed by %player%.'
+  kicked: '&cYou were kicked from the game.'
+  targetPlayerSet: '&aYour compass shows you now the position of %player%.'
+  posCreated: '&aPosition %position% created.'
+  arenaCreated: '&aArena created.'
+  clickSign: '&aClick a sign.'
+  clickPlayer: '&aClick a player.'
+  clickToSetSafe: '&aClick a(n) %block% to create safe ''%name%''.'
+  cooldownSet: '&aCooldown set.'
+  needConfirmDisabled: '&aNo longer need to confirm something. Enable again with ''gtd
+    confirm enable'''
+  needConfirmEnabled: '&aNeed to confirm something is now enabled.'
+  joinedGame: '&aYou joined the game in team %team% with jobs %jobs%.'
+  leftGame: '&aYou left the game.'
+  otherJoinedGame: '&a%player% &ajoined the game in team %team% with jobs %jobs%.'
+  otherLeftGame: '&a%player% &aleft the game.'
+  startRobSafe: '&aYou started robbing a safe. Please wait until it''s opened.'
+  robFinishedSafe: '&aYou robbed a safe and got %amount%$'
+  doNotMove: '&eDon''t move for the next %time%.'
+  newTargetPlayer: '&aYour new targetplayer is %player%. Find him with the compass.'
+  acceptedCorruptOther: '&a%player% accepted the corrupt.'
+  acceptedCorrupt: '&aYou accepted the corrupt.'
+  defaultSpawnSet: '&aDefault spawn set.'
+  spawnSet: '&aA %spawnType% spawn with id %spawn% was set.'
+  jailSpawnSet: '&aSpawn set of jail %jail%.'
+  jailCellAdded: '&aJail cell added for jail %jail%.'
+  howToDisableConfirmNeed: '&eYou can disable that you must always do so. ''/gtd confirm
+    disable'''
+  allKicked: '&aAll players were kicked from the game.'
+  kickedOther: '&aYou kicked %player% from the game.'
+  pluginReloaded: '&aPlugin reloaded.'
+  safeCreated: '&aSafe ''%name%'' created.'
+  safeUpdated: '&aSafe ''%name%'' updated.'
+  safeRemoved: '&aSafe removed.'
+  signCreated: '&aSign created succesfully.'
+  signRemoved: '&aSign removed.'
+  ingameList: '&eThe following players are playing GTD (%ingameCount%):'
+  updaterNotEnabled: '&cThe updater is disabled in config.yml.'
+  updated: '&aNew version &e%version% &awas downloaded... Reload your server to use
+    it.'
+  downloadingFile: '&aDownloading file...'
+  noUpdate: '&cNo update found.'
+  banReasonFormat: ' &cReason: &e%reason%'
+  alreadyBanned: '&c%player% is already banned from GTD.'
+  notBanned: '&c%player% is not banned from GTD.'
+  notBannedTeam: '&c%player% is not banned from GTD (%team%).'
+  getBanned: '&cYou were banned from GTD by %player% (%team%).'
+  bannedOther: '&aYou banned %player% from GTD (%team%).'
+  getTimeBanned: '&cYou were banned from GTD by %player% (%team%) for %time%.'
+  timeBannedOther: '&aYou banned %player% from GTD (%team%) for %time% minutes.'
+  getUnbanned: '&aYou are no longer banned from GTD.'
+  unbannedOther: '&aYou unbanned %player% from GTD.'
+  getUnbannedTeam: '&aYou are no longer banned from GTD (%team%).'
+  unbannedTeamOther: '&aYou unbanned %player% from GTD (%team%).'
+  banned: '&cYou are banned from GTD.'
+  tempBanned: '&cYou are banned from GTD. Ban time left: %time%'
+  bannedTeam: '&cYou are banned from GTD (%team%).'
+  tempBannedTeam: '&cYou are banned from GTD (%team%). Ban time left: %time%'
+  showBalanceSelf: '&eYour balance: &c$%amount%'
+  showBalanceOther: '&e%player%''s balance: &c$%amount%'
+  gaveMoneyToPlayer: '&eYou gave &c$%amount% &eto %player%.'
+  gotMoneyFromPlayer: '&eYou got &c$%a &efrom %player%.'
+  ecoSet: '&eYour GTD-Balance was set to &a$%amount%&e.'
+  ecoSetOther: '&eGTD-Balance of %player% was set to &a$%amount%&e.'
+  ecoGive: '&eYou got &a$%amount%&e.'
+  ecoGiveOther: '&e%player% got &a$%amount%&e.'
+  ecoTake: '&a$%a&e were taken from your GTD-Account.'
+  ecoTakeOther: '&a$%amount%&e &ewere taken from %player%''s GTD-Account.'
+  ecoReset: '&aYour GTD-balance have been resetted'
+  ecoResetOther: '&a%player%''s GTD-Balance have been resetted'
+  dataSaved: '&aData saved.'
+  sign:
+    invalidSignClicked: '&cYou cliecked an invalid sign.'
+  gang:
+    alreadyExist: '&cGang %gang% does already exist.'
+    alreadyInvited: '&c%player% is already invited.'
+    cannotAcceptInvite: '&cYou cannot accept a gang invite for gang %gang%.'
+    notExist: '&cGang %gang% does not exist.'
+    noLongerExist: '&cGang %gang% does no longer exist.'
+    noPvP: '&c%player% is in one of your gangs which have disabled PvP.%newLine%You
+      can''t hit him/her.'
+    toMuchMembers: '&cGang %gang% has to much members. Maximum is %amount%.'
+    alreadyInGang: '&cYou are already in a gang (%gang%).'
+    alreadyInGangOther: '&c%player% is already in a gang (%gang%).'
+    notOwner: '&cYou are not the owner of the gang. So you can''t do this.'
+    optionSet: '&aOption &e%option% &aset to &e%value% &afor gang &e%gang%&a.'
+    created: '&aGang %gang% created.'
+    createdOwner: '&aGang %gang% created with owner %player%.'
+    deleted: '&aGang %gang% deleted.'
+    otherDeleted: '&a%player% deleted the gang %gang%. %newLine%You were a member
+      or owner of this gang.'
+    askForMembership: '&e%player% want to invite you to his gang %gang%. %newLine%Use
+      &a/gtd gang accept %gang% &eto accept.'
+    askedForMembershipOther: '&eYou asked %player% for a membership in the gang %gang%.'
+    joined: '&aYou joined the gang %gang%.'
+    otherJoined: '&a%player% joined the gang %gang%.'
+    toMuchMemberships: '&cYou have to much memberships in other gangs. Maximum is
+      %amount%'
+    toMuchMembershipsOther: '&c%player% has to much memberships in other gangs. Maximum
+      is %amount%'
+  kit:
+    notExist: '&cKit %kit% does not exist.'
+    added: '&aKit %kit% was added to your inventory.'
+    addedOther: '&aKit %kit% was added to %player%''s inventory.'
+    hasCooldown: '&cKit %kit% has a cooldown. Time left: %time%.'
+    hasCooldownOther: '&cKit %kit% has a cooldown for %player%. Time left: %time%.'
+  mission:
+    notExist: '&cMission %mission% does not exist.'
+    alreadyInMission: '&cYou are already in a mission.'
+    alreadyInMissionOther: '&c%player% is already in a mission.'
+    joined: '&aYou joined mission %mission%.'
+    joinedOther: '&a%player% joined mission %mission%.'
+  car:
+    notOwner: '&cYou are not the owner of this car/horse. %newLine%(Owner is %owner%)'
+    canNotChangeInventory: '&cYou are not allowed to change the inventory of that
+      car/horse.'
+    canNotDamageOwn: '&cYou are not allowed to damage your own car/horse.'
+    canNotDamage: '&cYou are not allowed to damage the car/horse. %newLine%(Owner
+      is %owner%)'
+    canNotDamageNoOwner: '&cYou are not allowed to damage the car/horse.'
+  house:
+    clickDoorToSet: '&aClick a door to set the door of house %house%.'
+    doorCreated: '&aYou created the door for house %house%.'
+    bought: '&aYou bought the house %house%.'
+    notPurchasable: '&cYou cannot buy this house.'
+    notOwnHouse: '&cHouse %house% is not yours.'
+    alreadyDoor: '&cThis door is already a door of an house.'
+    noLongerHouse: '&cHouse %house% does no longer exist.'
+    teleported: '&aTeleported to house %house%.'
+    notExist: '&cHouse %house% does not exist.'
+    alreadyExist: '&cHouse %house% does already exist.'
+    doorSet: '&aYou set the door house %house%.'
+    priceSet: '&aYou set the price of house %house%.'
+    spawnSet: '&aYou set the spawn of house %house%.'
+    created: '&aYou created house %house%. Your location is now the spawn location
+      of the house. Use ''/gtd house setspawn %house%'' to change the spawn.'
+  dealer:
+    created: |-
+      &aDealer '%dealer%' created at your current location.
+      Sneak and right click the dealer to set the trades.
+  drug:
+    tripedOut: '&aYou triped out (%drug%).'
+  job:
+    joined: '&aYou joined job %job%.'
+    joinedOther: '%player% joined job %job%.'
+    left: '&aYou left job %job%.'
+    leftOther: '%player% left job %job%.'
+    notExist: '&cJob %job% does not exist.'
+    canNotJoinMore: '&cYou can''t join more jobs.'
+    canNotJoinMoreOther: '&c%player% can''t join more jobs.'
+    alreadyJoined: '&cYou already joined the job %job%.'
+    alreadyJoinedOther: '&c%player% already joined the job %job%.'
+    notJoined: '&cYou didn''t join job %job%.'
+    notJoinedOther: '&c%player% didn''t join job %job%.'
+    wrongTeam: '&cThe job %job% is not available for team %wrongTeam%%newLine%(Required
+      team is %requiredTeam%)'
+    info: '&eJob information for job &6%job%&e: %newLine%%information%'
+  changelog:
+    notEnabled: '&cConnecting with dev.bukkit.org to get the changelog is not enabled.'
+    notLoaded: '&cChange log not loaded. Please wait some seconds and try again.'
+    noVersion: |-
+      &c%argument% is not a version. Format: <type>_<version>
+      Example: 'beta_1.2.3'
+  wand:
+    enabled: '&eWand &aenabled&e.'
+    disabled: '&eWand &cdisabled&e.'
+  stats:
+    notLoaded: '&cStats not loaded. Try again later.'
+  language:
+    noLanguage: '&c%language% is not a valid language.'
+    ownLanguageSet: '&aYour language was set to %language%.'
+    defaultLanguageSet: '&aDefault language was set to %language%.'
+  reloaded:
+    all: '&aAll files reloaded.'
+    file: '&a%file% reloaded.'
+    plugin: '&aPlugin reloaded.'
+  chat:
+    modeSet: '&aYour chat mode was set to ''%chat-mode%''.'
+    modeSetOther: '&aChat mode of %player% was set to ''%chat-mode%''.'
+    modeNotExist: |-
+      &cChat mode '%chat-mode%' does not exist.
+      &eUse '/gtd chat info' to see all chat modes.
+Help:
+  noCommandDescriptionAvailable: '&cNo command description available.'
+  arrest:
+    description: Arrest a player after handcuffing
+  changelog:
+    description: Shows the change log of the given version
+  ban:
+    description: Manage the ban system
+  corrupt:
+    description: Use this in the jail
+  create:
+    description: Create the arena
+  detain:
+    description: Detain a player after handcuffing
+  eco:
+    description: Manage the economy system
+  find:
+    description: Set your compass target to a player
+  gang:
+    description: Manage the gangs
+    accept: Accept to join a gang
+    add: Add a member to a gang
+    create: Create a new gang
+    delete: Delete a gang
+    invite: Invite a player to your gang
+    list: List all gangs
+    option: Set some gang options
+    options: A list of all gang options
+    removemember: Remove a member from a gang
+  give:
+    description: Gives you or an other player a GTD object
+  help:
+    description: Shows this page. Use '/gtd help help' for more information
+  house:
+    description: Manage the houses of the plugin
+  info:
+    description: Shows some information about the plugin
+  job:
+    description: Manage the jobs of the plugin
+  join:
+    description: Join the game...
+  language:
+    description: Select your language
+  leave:
+    description: Leave the game...
+  kick:
+    description: Kicks a player or all players from GTD
+  kit:
+    description: You can give a kit to yourself or an other player
+  list:
+    description: List all players in GTD
+  mission:
+    description: Join or leave a misson
+  money:
+    description: Shows your current GTD money
+  objects:
+    description: A list of all GTD objects...
+  pay:
+    description: Pay some GTD money to an other player
+  reload:
+    description: Reload the confirurations/plugin
+  savedata:
+    description: Store the data into the file data.yml
+  setjail:
+    description: Create a jail with this command
+  setsafe:
+    description: Create a safe to rob
+  setspawn:
+    description: Set some arena spawns
+  sign:
+    description: Set some options to a sign
+  unban:
+    description: Unban a player from GTD
+  update:
+    description: Updates the plugin
+  wand:
+    description: Enable/disable the wand to set the arena
+Formats:
+  rightUsage: '&eUse: ''%rightUsage%'''
+  time: '%days%d%hours%h%minutes%m%seconds%s'
+  list: '&6%object%: &e%list%'
+  listObject: '%object%, '
+  listObjectAdditionalInformation: '%newLine%&e%object% - %additionalInformation%'
+  players: '%player%, '
+  ingameList: ' &6%team%s (%teamCount%): &e%players%'
+  banReason: '&eReason: &c%reason%'
+  defaultBanReason: '&eSick to the rules.'
+  gangList: '&eGangs: &6%gangs%'
+  gangs: '%gang%, '
+  help: '&e/%command% &f| &e%description%'
+  header: '&e[] --- &6GrandTheftDiamond &e- &6%title% &e --- []'
+  headerWithPages: '&e[] --- &6GrandTheftDiamond &e- &6%title% &e- &6%currentPage%/%pageCount%
+    &e--- []'
+  chat:
+    modes: '&e- %chat-mode% | Message prefix: ''%message-prefix%'''
+  stats:
+    self: '&e%statsType%: %value%'

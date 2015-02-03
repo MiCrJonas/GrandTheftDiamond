@@ -1,0 +1,81 @@
+# You can use the following in ALL (Without %player%, %balance% and %team% in motd.multiplayerMenu) messages of this file to replace some information:
+# %player% -> The player which gets the message
+# %ingameList% -> A list of all players which are ingame
+# %<team>List% -> A list of all players in this team
+# %ingameCount% -> The count of all players which are ingame
+# %<team>Count% -> The count of all players in this team
+# %team% -> The team of a player
+# %date% -> The current date in the server's time zone
+# %balance% -> Balance of the player
+
+use: false
+playersCanLeaveGame: false
+joinMessage:
+  disableMessage: false
+  change: true
+  message: '&e%player% joined the server and is in team %team%.'
+  sendMessageToJoinedPlayer: false
+quitMessage:
+  disableMessage: false
+  change: false
+  message: '&e%player% left the Bukkit.getServer().'
+commands:
+  enableCommandsWithoutPrefix: true
+  commandsWithoutPrefixBlacklist:
+  - reload
+  - help
+  - '?'
+motd:
+  multiplayerMenu:
+    change: true
+    text:
+    - '&6&lGrandTheftDiamond &7- &6Plugin by MiCrJonas1997! %newLine% &aCivilians:
+      %civilianCount%| Gangsters: %gangsterCount%| Cops: %copCount%'
+    - '&6Your admin didn''t change the MOTD in %newLine% .../GrandTheftDiamond/onlyGTDModeConfig.yml!'
+  chat:
+    use: true
+    delayInTicks: 5
+    text:
+    - ''
+    - '&aWelcome to GrandTheftDiamond by MiCrJonas1997!'
+    - '&aYou are in team %team%!'
+    - '&aPlayers ingame: %ingameCount% (Civilians: %civilianCount%, Gangsters: %gangsterCount%,
+      Cops: %copCount%)'
+    - '&aIt''s %date%'
+    - ''
+broadcaster:
+  use: true
+  prefix: '&6[GTD-Broadcaster] &e'
+  useTeamBroadcast: true
+  useGroupBroadcast: true
+  teams:
+    civilian:
+      startAfterSeconds: 100
+      delayInSeconds: 600
+      random: false
+      messages:
+      - You are a civilian! So you can rob safes to get money!
+    cop:
+      startAfterSeconds: 200
+      delayInSeconds: 600
+      random: false
+      messages:
+      - 'The following players are gangsters: %gangsterList%! Jail them to get money!'
+  groups:
+    default:
+      startAfterSeconds: 300
+      delayInSeconds: 600
+      random: false
+      messages:
+      - We hope you have fun with GrandTheftDiamond
+      - 'Please report bugs to: &n&9http://dev.bukkit.org/bukkit-plugins/grand-theft-diamond/'
+      - I'm a message!
+      - We love you, %player%!
+      - '&aPlayers ingame: %ingameCount% (Civilians: %civilianCount%, Gangsters: %gangsterCount%,
+        Cops: %copCount%)'
+    vip:
+      startAfterSeconds: 400
+      delayInSeconds: 600
+      random: false
+      messages:
+      - Uhh, you have VIP permissions!

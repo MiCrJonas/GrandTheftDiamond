@@ -1,0 +1,456 @@
+# Configuration file - GrandTheftDiamond - Plugin version: Beta_1.11.6
+# Gangsters are Civilians with WantedLevel > 0!
+# Configuration for jail, rob etc. can be found in the file 'event-config.yml'!
+# Should the plugin send a message to the developers of the plugin when they join the server?
+allowDevMessage: true
+# Enable update checking? You can download the latest file manually with '/gtd update'
+useUpdater: true
+# In which interval should the updater check for updates? (In minutes)
+updateCheckIntervalInMinutes: 120
+# Should the plugin download the change log from dev.bukkit.org to see it with'/gtd changelog'?
+useChangeLogFunction: true
+# In this intervall, the plugin saves all it's data to the files. Time is in seconds. Set to '-1' to disable
+autoSaveIntervall: 600
+# The chat prefix of all messages of the plugin
+chatPrefix: '&6[GT-Diamond] &r'
+# How often should a compass get updated if a player has an other player as target? In seconds
+compassUpdateRate: 10
+# Save the ingame inventory after leaving the game?
+saveInventoryAfterLeavingGame: true
+# Item to select the arena location like the WorldEdit wand
+wandItem: ARROW
+# How many lines should the help page of the plugin have
+maxLinesPerPage: 8
+# If other plugins cancelled the interaction with an item or block, should the plugin ignore them?
+ignoreCancelledInteracts: false
+signs:
+# The first line of a GrandTheftDiamond sign
+  signTitle: '[&aGTD&r]'
+# Show the sign cool down on the sign?
+  updateCooldownSigns: true
+  shop:
+# Whether a player needs to pay with his vault account, too, on signs
+    useVaultEconomy: false
+  item:
+    cooldown:
+# The text on a sign when it has a cool down
+      active: '&cCooldown'
+# The text on a sign when it doesn't have a col down
+      inactive: '&aUsable'
+  house:
+# When you click the house sign of your house, should the plugin teleport you to your house?
+    teleportToHouseIfOwn: true
+# Text on a sign if you can buy it for $0
+    free: '&aFor free'
+temporaryPlayerData:
+# Should the plugin clear the temporary data of a player when he leaves? E.g. the selected arena locations
+  clearDataOnDisconnect: true
+# The time until the data gets cleared in seconds
+  timeToClearDataOnDisconnect: 600
+# If true, a player gets teleported to the location where he left the game
+teleportToLeavePositionOnJoin: true
+# Use vault to modify the chat (Player's Prefix/Suffix)
+useVaultChat: true
+# Use NametagEdit to modify the player's nametags
+useNametagEdit: true
+# Use the Vault economy system
+useVaultEconomy: false
+economy:
+# The money balance a player have after he first joined the game
+  startBalance: 1000
+# A player can't have less money then this
+  minBalance: -5000
+# The money balance a player can have
+  maxBalance: 1000000
+# Use the plugin's economy system?
+  useGrandTheftDiamondEconomy: true
+# Somewere you can edit a balance a player gets for a specific event. How much percent of this balance should a player get..
+  percentOfDefaultBalance:
+# .. on his GrandTheftDiamond accont?
+    GTD: 100
+# .. on his Vault account
+    Vault: 20
+# If true, the player gets 'economy/startBalance' when someone resets his balance
+  resetToStartBalance: true
+  currency:
+# The plugin's currency symbol. Can have more than one character
+    symbol: $
+banSystem:
+# Send the default ban message when a player gets banned?
+  sendDefaultBanMessage: true
+  copAutoban:
+# Autobans a cop when he killed to much cops or civilians
+    use: true
+# Count the killed civilians?
+    countCivilianKills: true
+# Count the killed cops?
+    countCopKills: true
+# How many cops/civilians can a cop kill to get banned?
+    maxKilledCopsAndCivilians: 10
+# For which team should he get banned? 'each_team' to ban him from the whole game
+    banAs: cop
+# How long should the player be banned? In seconds
+    time: -1
+# The message the player gets
+    reason: You killed to much civilians and cops!
+disableTeleport:
+# Disable the teleportation of an ingame player to outside the arena?
+  fromInsideToOutsideArena: true
+# Disable the teleportation of an ingame player?
+  fromInsideToInsideArena: false
+# Block all commands while a player is ingame? 'gta.bypasscommandusage' to bypass
+blockIngameCommands: true
+# The allowed commands for all users
+commandWhitelist:
+- /gtd
+- /gta
+- /grandtheftdiamond
+- /grandtheftauto
+- /time
+- /who
+# Disable the auto heal for ingame players?
+disableAutoheal: true
+# Disable hunger for ingame players?
+disableHunger: true
+# Disable mob spawning in the whole arena?
+disableMobspawningInArena: false
+# Join delay to prevent teleporting away from pvp or something like this. 'gta.bypassjoindelay' to bypass
+joinTeleportDelay: 0
+drugs:
+  beer:
+    item:
+      item: POTION
+      name: Beer
+      lore:
+      - Good german beer
+    effects:
+    - type: CONFUSION
+      duration: 40
+      amplifier: 0
+      timeToEffect:
+        min: 4
+        max: 8
+  chrystal_meth:
+    item:
+      item: NETHER_STAR
+      name: Chrystal Meth
+    effects:
+    - type: CONFUSION
+      duration: 50
+      amplifier: 0
+      timeToEffect:
+        min: 10
+        max: 20
+    - type: SPEED
+      duration: 40
+      amplifier: 0
+      timeToEffect:
+        min: 5
+        max: 10
+  hashish:
+    item:
+      item: CLAY_BRICK
+      name: Hashish
+    effects:
+    - type: JUMP
+      duration: 50
+      amplifier: 0
+      timeToEffect:
+        min: 10
+        max: 20
+objects:
+  flamethrower:
+    name: Flamethrower
+    item: STONE_AXE
+    burnTime: 4.0
+    useFuel: true
+    effects:
+    - MOBSPAWNER_FLAMES
+    - MOBSPAWNER_FLAMES
+    sounds:
+    - ZOMBIE_HURT
+    disable: false
+  grenade:
+    name: Grenade
+    explosionRadius: 2.0
+    breakBlocks: false
+    setFire: false
+    disable: false
+  handcuffs:
+    name: Handcuffs
+    item: STRING
+    requiredClickDuration: 0
+    handcuffedTime: 20
+    disableAllInteractsWhileHandcuffed: true
+    effects:
+    - type: SLOW
+      duration: 20
+      amplifier: 2
+    disable: false
+  jetpack:
+    name: Jetpack
+    useFuel: true
+    power: -0.5
+    maxFlightHeight: 120
+    disableFallDamage: true
+    jetpackControl:
+      name: Jetpack Control
+      item: BLAZE_ROD
+    disable: false
+  knife:
+    name: Knife
+    item: IRON_SWORD
+    damage: 4
+    useCooldown: true
+    cooldownInTicks: 10
+    disable: false
+  taser:
+    name: Taser
+    item: SHEARS
+    civilianCanUseTaser: false
+    copsCanGetTazed: false
+    damage: 2
+    effects:
+    - type: SLOW
+      duration: 5
+      amplifier: 5
+    - type: CONFUSION
+      duration: 5
+      amplifier: 1
+    - type: BLINDNESS
+      duration: 2
+      amplifier: 1
+    - type: WEAKNESS
+      duration: 5
+      amplifier: 3
+    disable: false
+  firearms:
+    allowUseGunMessage: true
+    gun:
+      name: Gun
+      item: STONE_HOE
+      shotsPerSecond: 0.8
+      projectilesPerShot: 1
+      damage: 3
+      power: 80%
+      accuracy: 80%
+      projectile: SNOWBALL
+      sounds:
+        onShot:
+        - EXPLODE
+        - CLICK delayInTicks:5
+        - CLICK delayInTicks:7
+        onHit:
+        - ZOMBIE_HURT
+      zoom:
+        use: false
+        effects:
+        - type: SLOW
+          amplifier: 3
+      knockback: 0.1
+      ammo:
+        use: true
+        item: 332
+        name: Ammo (Gun)
+      disable: false
+    machinegun:
+      name: Machine gun
+      item: IRON_HOE
+      shotsPerSecond: 5.0
+      projectilesPerShot: 1
+      damage: 4
+      power: 80%
+      accuracy: 80%
+      projectile: SNOWBALL
+      sounds:
+        onShot:
+        - EXPLODE
+        onHit:
+        - ZOMBIE_HURT
+      zoom:
+        use: true
+        effects:
+        - type: SLOW
+          amplifier: 3
+      knockback: 0.2
+      ammo:
+        use: true
+        item: 332
+        name: Ammo (Machine gun)
+      disable: false
+    uzi:
+      name: Uzi
+      item: GOLD_HOE
+      shotsPerSecond: 2.0
+      projectilesPerShot: 2
+      damage: 4
+      power: 80%
+      accuracy: 60%
+      projectile: SNOWBALL
+      sounds:
+        onShot:
+        - EXPLODE
+        onHit:
+        - ZOMBIE_HURT
+      zoom:
+        use: false
+        effects:
+        - type: SLOW
+          amplifier: 3
+      knockback: 0.5
+      ammo:
+        use: true
+        item: 332
+        name: Ammo (Uzi)
+      disable: false
+    sniper:
+      name: Sniper
+      item: DIAMOND_HOE
+      shotsPerSecond: 0.5
+      projectilesPerShot: 1
+      damage: 6
+      power: 100%
+      accuracy: 100%
+      projectile: SNOWBALL
+      sounds:
+        onShot:
+        - EXPLODE
+        onHit:
+        - ZOMBIE_HURT
+      zoom:
+        use: true
+        effects:
+        - type: SLOW
+          amplifier: 20
+        - type: NIGHT_VISION
+          amplifier: 1
+      knockback: 0.2
+      ammo:
+        use: true
+        item: 332
+        name: Ammo (Sniper)
+      disable: false
+  cars:
+    disableInventoryChange: true
+    playersCanDamageNotOwnedCar: true
+    playersCanDamageOwnedCar: false
+    playersCanDamageOwnCar: true
+    disableAllCarDamage: false
+    autoCarSpawnDelayUntilNextSpawning: 120
+    minRadiusToNextFreeHorseForSpawn: 120
+    maxRadiusToNextPlayerForSpawn: 80
+    policecar:
+      name: Police car
+      team: COP
+      horseColor: WHITE
+      horseStyle: BLACK_DOTS
+      variant: HORSE
+      maxHealth: 20.0
+      jumpStrength: 0.2
+      speed: -1
+    civilcar:
+      name: Civil Car
+      team: CIVILIAN
+      horseColor: BROWN
+      horseStyle: WHITEFIELD
+      variant: HORSE
+      maxHealth: 20.0
+      jumpStrength: 0.2
+      speed: -1
+    sportscar:
+      name: Sports Car
+      team: CIVILIAN
+      horseColor: WHITE
+      horseStyle: WHITEFIELD
+      variant: HORSE
+      maxHealth: 40.0
+      jumpStrength: 0.6
+      speed: 1
+jobs:
+  maxJobsPerPlayer:
+    default: 1
+    vip: 3
+chat:
+  global:
+    messagePrefix: '!'
+    chatPrefix: '&7[Global Chat]&r '
+  local:
+    messagePrefix: '*'
+    chatPrefix: '&7[Local Chat]&r '
+    defaultForIngamePlayers: false
+    ifDefault:
+      sendLocalChatPrefix: true
+      sendGlobalChatPrefix: false
+  team:
+    messagePrefix: '-'
+    messageFormat: '&7[GroupChat] [&6%group%&7] %player%: &f%message%'
+  serverChat:
+    prefix:
+      civilian: '&7[&aCiv&7]&r '
+      gangster: '&7[&cCiv&7]&r '
+      cop: '&7[&9Cop&7]&r '
+    suffix:
+      civilian: ''
+      gangster: ' &c[%wantedLevel%]&r'
+      cop: ''
+scoreboard:
+  nametag:
+    use: true
+    prefix:
+      civilian: '&7[Civ]&r '
+      gangster: '&7[Civ]&r '
+      cop: '&7[Cop]&r '
+    suffix:
+      civilian: ''
+      gangster: ' &c[%wantedLevel%]'
+      cop: ''
+  stats:
+    use: true
+    title: Stats
+    shownStats:
+      DEATHS: Deaths
+      EXP: Exp
+      JAILED_GANGSTERS: Jailed gangsters
+      KILLED_CIVILIANS: Killed civilians
+      KILLED_COPS: Killed cops
+      KILLED_GANGSTERS: Killed gangsters
+      MONEY: Money
+      RESPECT: Respect
+      ROBBED_SAFES: Robbed safes
+      TOTAL_WANTED_LEVEL: Total wanted level
+      WANTED_LEVEL: Wanted level
+gangs:
+  mustBeIngameToManageGangs: true
+  maxMembersPerGang: 5
+  maxOwnedGangs: 1
+  maxMemberships: 2
+  defaultFriendlyFire: false
+  defaultOwnerMustInvite: true
+startKits:
+  cop:
+  - cop-default
+  civilian:
+  - civilian-default
+language:
+  defaultLanguage: english
+kits:
+  civilian-default:
+    items:
+    - item: SUGAR
+      amount: 2
+      name: Useless Sugar
+      lore:
+      - '&7I''m Just Here To Show How'
+      - '&7To Configure Custom Kits/Items'
+      enchantments:
+      - CUSTOM_ENCHANTMENT 1
+    - item: grandtheftdiamond:gun
+    - item: grandtheftdiamond:ammo:gun
+      amount: 64
+  cop-default:
+    items:
+    - item: grandtheftdiamond:handcuffs
+    - item: grandtheftdiamond:taser
+    - item: grandtheftdiamond:machinegun
+    - item: grandtheftdiamond:ammo:machinegun
+      amount: 64

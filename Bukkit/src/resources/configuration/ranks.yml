@@ -1,0 +1,23 @@
+# NOT USEABLE YET!
+permissionsFromLowerRanks: true
+ranks:
+  cop:
+    Officer:
+      exp: 0
+      color: '8'
+      permissions: []
+    SWAT:
+      exp: 1000
+      color: c
+      permissions:
+      - gta.use.item.sniper
+  civilian:
+    Gangster:
+      exp: 0
+      color: '8'
+      permissions: []
+    Robber:
+      exp: 1000
+      color: c
+      permissions:
+      - gta.use.item.flamethrower
