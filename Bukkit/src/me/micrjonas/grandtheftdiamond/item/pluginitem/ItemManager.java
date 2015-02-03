@@ -49,7 +49,7 @@ public class ItemManager implements FileReloadListener {
 	/**
 	 * Adds the item to the {@link Player}'s {@link Inventory} or spawns it for him. Also sends a message
 	 * 	to the {@link Player}
-	 * @param p The {@link Player} who should get the item
+	 * @param p The {@link Player}
 	 * @param item The item to add
 	 * @param amount The amount of items
 	 * @throws IllegalArgumentException Thrown if {@code item} is {@code null}
