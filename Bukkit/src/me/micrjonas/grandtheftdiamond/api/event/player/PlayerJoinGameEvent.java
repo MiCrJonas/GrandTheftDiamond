@@ -37,7 +37,7 @@ public class PlayerJoinGameEvent extends CancellablePlayerEvent implements Cause
 	private String joinMessagePlayer;
 	private Team team;
 	private final JoinReason reason;
-	private List<Kit> kits = new ArrayList<>();
+	private final List<Kit> kits;
 	
 	public PlayerJoinGameEvent(Player who,
 			boolean defaultCancelled,
@@ -58,7 +58,7 @@ public class PlayerJoinGameEvent extends CancellablePlayerEvent implements Cause
 		this.joinMessagePlayer = joinMessagePlayer.toLowerCase().equals("null") ? null : joinMessagePlayer;
 		this.team = team;
 		this.reason = reason;
-		setKits(kits);
+		this.kits = kits != null ? kits : new ArrayList<>();
 	}
 	
 	@Override
@@ -158,9 +158,9 @@ public class PlayerJoinGameEvent extends CancellablePlayerEvent implements Cause
 	
 	
 	/**
-	 * Returns a list of the name of all kits the player will get after joining
-	 * The player only gets the kits if this is his first time joining the game
-	 * @return A list of the name of all kits the player will get after joining
+	 * Returns a {@link Link} of all {@link Kit}s the player will receive after joining.<br>
+	 * 	The player only gets the {@link Kit}s if this is his first time joining the game. The {@link Link} is editable
+	 * @return A list of the name of all {@link Kit}s the player will get after joining
 	 */
 	public List<Kit> getKits() {
 		return kits;
