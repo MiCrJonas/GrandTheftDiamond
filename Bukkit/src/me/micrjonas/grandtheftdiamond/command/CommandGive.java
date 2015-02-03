@@ -30,8 +30,7 @@ public class CommandGive implements CommandExecutor, TabCompleter {
 				PluginItem item = ItemManager.getInstance().getItem(args[1]);
 				if (item != null) {
 					if (GrandTheftDiamond.checkPermission(sender, "give." + args[1] + ".self", true, NoPermissionType.COMMAND)) {
-						Messenger.getInstance().sendPluginMessage(sender, "itemReceived", new String[]{"%item%"}, new String[]{item.getName()});
-						item.giveToPlayer(p, 1);
+						ItemManager.giveToPlayer(p, item, 1);
 					}
 				}
 				else {
@@ -51,12 +50,12 @@ public class CommandGive implements CommandExecutor, TabCompleter {
 					Player p = Bukkit.getServer().getPlayer(args[2]);
 					if (p != null) {
 						if (sender != p || GrandTheftDiamond.checkPermission(sender, "give." + args[1] + ".self", true, NoPermissionType.COMMAND)) {
-							item.giveToPlayer(p, 1);
 							if (sender != p) {
+								item.giveToPlayer(p, 1);
 								Messenger.getInstance().sendPluginMessage(sender, "itemReceivedOther", new Player[]{p}, new String[]{"%item%"}, new String[]{Messenger.getInstance().getPluginWord(args[1].toLowerCase())});
 							}
 							else {
-								Messenger.getInstance().sendPluginMessage(sender, "itemReceived", new String[]{"%item%"}, new String[]{Messenger.getInstance().getPluginWord(args[1].toLowerCase())});
+								ItemManager.giveToPlayer(p, item, 1);
 							}
 						}
 						else {
