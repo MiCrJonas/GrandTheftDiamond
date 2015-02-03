@@ -13,7 +13,7 @@ public interface SignHandler extends Listener {
 	
 	/**
 	 * Listens to a {@link Player} interaction with a sign. It's required to do a permissions check for
-	 * 	the {@code clicker}. The {@link SignManager} calls {@link #isValid(String[], String[])}} first and only
+	 * 	the {@code clicker}. The {@link SignManager} calls {@link #isValid(String[], String[])} first, and only
 	 * 	if it returns {@code true}, this method will be called. Editing the passed lines doesn't change the sign
 	 * @param clicker The {@link Player} who clicked the sign
 	 * @param lines A copy of the original lines of the sign. Does contain all 4 sign lines, so length is 4
