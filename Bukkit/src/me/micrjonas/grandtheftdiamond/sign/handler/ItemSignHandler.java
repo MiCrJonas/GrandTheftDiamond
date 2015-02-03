@@ -18,10 +18,11 @@ public class ItemSignHandler implements SignHandler {
 	@Override
 	public void signClicked(Player clicker, String[] lines, String[] parsedLines) {
 		String itemName = lines[1];
-		GrandTheftDiamond.checkPermission(clicker, PERMISSION + itemName, true, NoPermissionType.USE);
-		PluginItem item = ItemManager.getInstance().getItem(itemName);
-		if (item != null) {
-			item.giveToPlayer(clicker, 1);
+		if (GrandTheftDiamond.checkPermission(clicker, PERMISSION + itemName, true, NoPermissionType.USE)) {
+			PluginItem item = ItemManager.getInstance().getItem(itemName);
+			if (item != null) {
+				item.giveToPlayer(clicker, 1);
+			}	
 		}
 	}
 
