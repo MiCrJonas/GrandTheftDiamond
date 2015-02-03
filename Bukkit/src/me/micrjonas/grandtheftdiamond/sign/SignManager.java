@@ -44,7 +44,7 @@ public class SignManager extends StringKeyListenerManager<SignHandler> implement
 	private String currencySymbol;
 	private boolean teleportToOwnHouse;
 	
-	public SignManager() {
+	private SignManager() {
 		GrandTheftDiamond.registerFileReloadListener(this);
 	}
 	
