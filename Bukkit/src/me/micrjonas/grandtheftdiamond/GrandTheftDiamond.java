@@ -29,6 +29,7 @@ import me.micrjonas.grandtheftdiamond.messenger.LanguageManager;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
 import me.micrjonas.grandtheftdiamond.messenger.NoPermissionType;
 import me.micrjonas.grandtheftdiamond.rob.RobManager;
+import me.micrjonas.grandtheftdiamond.sign.SignManager;
 import me.micrjonas.grandtheftdiamond.updater.ChangeLog;
 import me.micrjonas.grandtheftdiamond.updater.Version;
 
@@ -261,6 +262,15 @@ public final class GrandTheftDiamond {
 	 */
 	public static RobManager getRobManager() {
 		return RobManager.getInstance();
+	}
+	
+	/**
+	 * Returns the plugin's sign manager
+	 * @return The plugin's sign manager
+	 * @see SignManager#getInstance()
+	 */
+	public static SignManager getSignManager() {
+		return SignManager.getInstance();
 	}
 	
 	/**
