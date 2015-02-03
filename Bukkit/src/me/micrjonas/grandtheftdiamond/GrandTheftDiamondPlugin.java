@@ -91,6 +91,7 @@ import me.micrjonas.grandtheftdiamond.messenger.Messenger;
 import me.micrjonas.grandtheftdiamond.messenger.NoPermissionType;
 import me.micrjonas.grandtheftdiamond.onlygtdmode.OnlyGTDModeManager;
 import me.micrjonas.grandtheftdiamond.rob.RobManager;
+import me.micrjonas.grandtheftdiamond.sign.SignManager;
 import me.micrjonas.grandtheftdiamond.sign.SignUpdater;
 import me.micrjonas.grandtheftdiamond.stats.board.StatsBoardManager;
 import me.micrjonas.grandtheftdiamond.updater.ChangeLog;
@@ -182,6 +183,7 @@ public class GrandTheftDiamondPlugin extends JavaPlugin {
 		LanguageManager.getInstance();
 		PluginData.getInstance();
 		RobManager.getInstance();
+		SignManager.getInstance();
 		SignUpdater.getInstance();
 		StatsBoardManager.getInstance();
 		
