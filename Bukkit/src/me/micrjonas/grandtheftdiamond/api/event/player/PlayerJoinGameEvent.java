@@ -165,20 +165,5 @@ public class PlayerJoinGameEvent extends CancellablePlayerEvent implements Cause
 	public List<Kit> getKits() {
 		return kits;
 	}
-	
-	
-	/**
-	 * Sets the kits the player will get after joining the game
-	 * The player only gets the kits if this is his first time joining the game
-	 * @param kits The new kits
-	 */
-	public void setKits(List<Kit> kits) {
-		if (this.kits != null) {
-			this.kits = kits;
-		}
-		else {
-			this.kits.clear();
-		}
-	}
 
 }
