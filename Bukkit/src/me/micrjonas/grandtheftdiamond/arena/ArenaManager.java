@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.data.storage.StorableManager;
 import me.micrjonas.grandtheftdiamond.util.Enums;
@@ -77,16 +76,6 @@ public class ArenaManager implements StorableManager<Arena> {
 			}
 		}
 	}
-
-	
-	@Override
-	public void saveObjects(FileConfiguration dataFile) {
-		FileManager.clearFile(dataFile);
-		for (Arena arena : arenas.values()) {
-			FileManager.getInstance().store(dataFile, arena);
-		}
-	}
-	
 	
 	/**
 	 * Creates a new {@link Arena}

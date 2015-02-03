@@ -84,14 +84,6 @@ public class HouseManager implements StorableManager<House>, FileReloadListener 
 			createNewHouse(null, identifier, Locations.getLocationFromFile(houseData, identifier + ".spawn", false), doorBelowBlock, owner, members, houseData.getInt(identifier + ".price"), true);
 		}
 	}
-	
-	@Override
-	public void saveObjects(FileConfiguration dataFile) {
-		FileManager.clearFile(dataFile);
-		for (House house : houses.values()) {
-			FileManager.getInstance().store(dataFile, house);
-		}
-	}
 
 	@Override
 	public void configurationReloaded(PluginFile file, FileConfiguration fileConfiguration) {

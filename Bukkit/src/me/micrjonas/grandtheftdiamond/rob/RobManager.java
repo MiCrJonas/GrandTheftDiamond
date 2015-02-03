@@ -14,7 +14,6 @@ import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.Team;
 import me.micrjonas.grandtheftdiamond.api.event.player.PlayerPreRobSafeEvent;
 import me.micrjonas.grandtheftdiamond.api.event.player.PlayerRobEvent;
-import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginData;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
@@ -109,14 +108,6 @@ public final class RobManager implements FileReloadListener, StorableManager<Saf
 					dataFile.set(safe, null);
 			}
 			DataConverter.convertSafeData(dataFile);
-		}
-	}
-
-	@Override
-	public void saveObjects(FileConfiguration dataFile) {
-		FileManager.clearFile(dataFile);
-		for (Safe safe : safes.values()) {
-			FileManager.getInstance().store(dataFile, safe);
 		}
 	}
 	

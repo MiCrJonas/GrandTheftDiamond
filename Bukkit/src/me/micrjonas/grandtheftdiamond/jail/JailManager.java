@@ -93,14 +93,6 @@ public class JailManager implements Listener, FileReloadListener, StorableManage
 		}		
 	}
 	
-	@Override
-	public void saveObjects(FileConfiguration dataFile) {
-		FileManager.clearFile(dataFile);
-		for (Jail jail : jails.values()) {
-			FileManager.getInstance().store(dataFile, jail);
-		}
-	}
-	
 	void onLeave(PlayerLeaveGameEvent e) {
 		if (isJailed(e.getPlayer())) {
 			FileConfiguration playerData = FileManager.getInstance().getPlayerData(e.getPlayer());

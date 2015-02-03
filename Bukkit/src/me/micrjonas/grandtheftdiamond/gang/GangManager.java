@@ -11,7 +11,6 @@ import java.util.UUID;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.api.event.GangCreateEvent;
-import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginData;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
@@ -104,14 +103,6 @@ public class GangManager implements FileReloadListener, StorableManager<Gang> {
 				dataFile.set(gang + ".options", optionConfiguration);
 			}
 			createGang(null, gang, leader, members, options, true);
-		}
-	}
-
-	@Override
-	public void saveObjects(FileConfiguration dataFile) {
-		FileManager.clearFile(dataFile);
-		for (Gang gang : getAllObjects()) {
-			FileManager.getInstance().store(dataFile, gang);
 		}
 	}
 	

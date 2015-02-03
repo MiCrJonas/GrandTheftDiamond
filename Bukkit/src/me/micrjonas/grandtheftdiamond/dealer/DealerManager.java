@@ -11,7 +11,6 @@ import java.util.Set;
 import java.util.UUID;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.data.player.PlayerDataUser;
 import me.micrjonas.grandtheftdiamond.data.storage.StorableManager;
@@ -114,15 +113,6 @@ public class DealerManager implements StorableManager<Dealer>, PlayerDataUser {
 			}
 			
 		}
-		
-	}
-
-
-	@Override
-	public void saveObjects(FileConfiguration dataFile) {
-		FileManager.clearFile(dataFile);
-		for (Dealer dealer : dealers.values())
-			FileManager.getInstance().store(dataFile, dealer, dealer.getUniqueId().toString());
 		
 	}
 	
