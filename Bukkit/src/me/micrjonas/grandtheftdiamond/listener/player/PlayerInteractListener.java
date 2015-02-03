@@ -44,7 +44,6 @@ import org.bukkit.inventory.ItemStack;
 public class PlayerInteractListener implements Listener, FileReloadListener {
 	
 	private final SetPositionsWithItem setPositionsWithItem = new SetPositionsWithItem();
-	private final SignManager clickSign = new SignManager();
 	private final Map<ItemStack, InteractablePluginItem> registeredItems = new HashMap<ItemStack, InteractablePluginItem>();
 	
 	private Material wandType;
@@ -132,7 +131,7 @@ public class PlayerInteractListener implements Listener, FileReloadListener {
 					else if (e.getClickedBlock().getType() == Material.SIGN_POST || e.getClickedBlock().getType() == Material.WALL_SIGN) {
 						Sign s = (Sign) e.getClickedBlock().getState();
 						if (s.getLine(0).equals(signTitle)) {
-							clickSign.onSignClick(s, p);
+							SignManager.getInstance().onSignClick(s, p);
 						}
 					}
 					else if (e.getClickedBlock().getType() == safeType) {
