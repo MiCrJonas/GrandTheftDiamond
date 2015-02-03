@@ -16,10 +16,4 @@ public interface StorableManager<T extends Storable> extends Manager<T> {
 	 */
 	public void loadObjects(FileConfiguration dataFile);
 	
-	/**
-	 * Saves all objects to the data file
-	 * @param dataFile Data file to store the object data
-	 */
-	public void saveObjects(FileConfiguration dataFile);
-	
 }
