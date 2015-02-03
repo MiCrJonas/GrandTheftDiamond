@@ -27,12 +27,12 @@ public enum SignType {
 	JAIL(true, 1),
 	
 	/**
-	 * Sign to join the game.<br>
+	 * Sign to join the game.
 	 */
 	JOIN(false, 0),
 	
 	/**
-	 * Sign to leave the game.<br>
+	 * Sign to leave the game.
 	 */
 	LEAVE(true, 0),
 	
