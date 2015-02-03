@@ -26,10 +26,20 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 /**
- * Manages when a {@code Player} clicks a sign
+ * Manages the signs of the plugin
  */
 public class SignManager extends StringKeyListenerManager<SignHandler> implements FileReloadListener {
 
+	private final static SignManager instance = new SignManager();
+	
+	/**
+	 * Returns the loaded instance
+	 * @return The loaded instance
+	 */
+	public static SignManager getInstance() {
+		return instance;
+	}
+	
 	private boolean useVaultEconomy;
 	private String currencySymbol;
 	private boolean teleportToOwnHouse;
@@ -38,7 +48,6 @@ public class SignManager extends StringKeyListenerManager<SignHandler> implement
 		GrandTheftDiamond.registerFileReloadListener(this);
 	}
 	
-
 	@Override
 	public void configurationReloaded(PluginFile file, FileConfiguration fileConfiguration) {
 		if (file == PluginFile.CONFIG) {
