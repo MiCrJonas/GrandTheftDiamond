@@ -13,12 +13,12 @@ import org.bukkit.entity.Player;
  */
 public class ItemSignHandler implements SignHandler {
 
-	private final String permission = "sign.use.item.";
+	private final String PERMISSION = "use.sign.item.";
 	
 	@Override
 	public void signClicked(Player clicker, String[] lines, String[] parsedLines) {
 		String itemName = lines[1];
-		GrandTheftDiamond.checkPermission(clicker, permission + itemName, true, NoPermissionType.USE);
+		GrandTheftDiamond.checkPermission(clicker, PERMISSION + itemName, true, NoPermissionType.USE);
 		PluginItem item = ItemManager.getInstance().getItem(itemName);
 		if (item != null) {
 			item.giveToPlayer(clicker, 1);
