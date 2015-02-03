@@ -20,6 +20,8 @@ import org.bukkit.entity.Player;
  */
 public class HouseSignHandler implements FileReloadListener, SignHandler {
 
+	private final String PERMISSION = "use.sign.house.";
+	
 	private boolean teleportToOwnHouse;
 	
 	/**
@@ -41,7 +43,7 @@ public class HouseSignHandler implements FileReloadListener, SignHandler {
 		House house = HouseManager.getInstance().getHouse(lines[1]);
 		if (house != null) {
 			if (house.getOwner() == null) {
-				if (GrandTheftDiamond.checkPermission(clicker, "use.sign.house.buy." + lines[1], true, NoPermissionType.USE)) {
+				if (GrandTheftDiamond.checkPermission(clicker, PERMISSION + "buy." + lines[1], true, NoPermissionType.USE)) {
 					if (EconomyManager.getInstance().hasBalance(clicker, house.getPrice())) {
 						EconomyManager.getInstance().withdraw(clicker, house.getPrice(), true);
 						house.setOwner(clicker);
@@ -55,7 +57,7 @@ public class HouseSignHandler implements FileReloadListener, SignHandler {
 			}
 			else if (teleportToOwnHouse) {
 				if ((house.getOwner() == clicker && GrandTheftDiamond.checkPermission(clicker, "use.sign.house.teleport.own")) ||
-						GrandTheftDiamond.checkPermission(clicker, "use.sign.house.teleport.other")) {
+						GrandTheftDiamond.checkPermission(clicker, PERMISSION + "teleport.other")) {
 					clicker.teleport(house.getSpawn());
 					Messenger.getInstance().sendPluginMessage(clicker, "house.teleported", "%house%", house.getName());
 				}
