@@ -25,8 +25,10 @@ public interface SignHandler extends Listener {
 	/**
 	 * Checks whether a sign is valid to use or whether there are invalid lines. The {@link SignManager} doesn't call
 	 * 	{@link #signClicked(Player, String[], String[])} if this method returns {@code false} for a specific sign
-	 * @param lines A copy of the original lines of the sign
-	 * @param parsedLines The lines of the sign without any color codes and in lower-cases
+	 * @param lines A copy of the original lines of the sign. Does contain all 4 sign lines, so length is always 4. Empty
+	 * 	lines are represented as empty String (""). No array element is {@code null}
+	 * @param parsedLines The lines of the sign without any color codes and in lower-cases. Does only contain line 2-4,
+	 *  so length is 3. Empty lines are represented as empty String (""). No array element is {@code null}
 	 * @return True if the sign is valid, else {@code false}. A {@code false}-return removes the sign and
 	 */
 	boolean isValid(String[] lines, String[] parsedLines);
