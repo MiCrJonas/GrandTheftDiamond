@@ -48,6 +48,12 @@ public class Kit implements Nameable {
 		return delay;
 	}
 	
+	public void setDelay(int delay) {
+		if (delay < -1) {
+			throw new IllegalArgumentException("Delay is not allowed to be < -1");
+		}
+	}
+	
 	public List<ItemStack> getItems() {
 		return Collections.unmodifiableList(items);
 	}
