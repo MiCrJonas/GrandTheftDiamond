@@ -1,6 +1,7 @@
 package me.micrjonas.grandtheftdiamond.item;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -16,23 +17,28 @@ public class Kit implements Nameable {
 	private List<ItemStack> items;
 	private int delay;
 	
-	public Kit(String name) {
+	/**
+	 * Default constructor. Initializing with an empty item {@link List} and delay 0
+	 * @param name The {@code Kit}'s name
+	 * @throws IllegalArgumentException Thrown if {@code name} is {@code null}
+	 */
+	public Kit(String name) throws IllegalArgumentException {
+		if (name == null) {
+			throw new IllegalArgumentException("Name is not allowed to be null");
+		}
 		items = new ArrayList<>();
 	}
 	
+	/**
+	 * @param name
+	 * @param delay
+	 */
 	public Kit(String name, int delay) {
 		this(name);
-		this.delay = delay;
+		setDelay(delay);
 	}
 	
-	public Kit(String name, ItemStack... items) {
-		this(name);
-		for (ItemStack item : items) {
-			this.items.add(item.clone());
-		}
-	}
-	
-	public Kit(String name, List<ItemStack> items) {
+	public Kit(String name, Collection<ItemStack> items) {
 		this(name);
 		for (ItemStack item : items) {
 			this.items.add(item.clone());
