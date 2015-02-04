@@ -127,7 +127,7 @@ public class Metrics {
      * @param plugin The plugin
      * @throws IOException Thrown if an I/O error occurs
      */
-    public Metrics(final GrandTheftDiamondPlugin plugin) throws IOException {
+    public Metrics(GrandTheftDiamondPlugin plugin) throws IOException {
         if (plugin == null) {
             throw new IllegalArgumentException("Plugin is not allowed to be null");
         }
