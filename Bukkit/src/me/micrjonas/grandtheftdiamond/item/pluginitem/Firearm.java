@@ -1,6 +1,7 @@
 package me.micrjonas.grandtheftdiamond.item.pluginitem;
 
-import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -14,6 +15,7 @@ import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Projectile;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
@@ -131,22 +133,42 @@ public class Firearm extends ItemStackPluginItem implements Fillable, Immutable,
 		return accuracy;
 	}
 	
+	/**
+	 * Returns the {@link Material} of the {@code Firearm}'s {@link Projectile}
+	 * @return The {@link Material} of the {@code Firearm}'s {@link Projectile}
+	 */
 	public Material getProjectile() {
 		return projectile;
 	}
 	
+	/**
+	 * Returns the knockback value of the firearm
+	 * @return The firearm's knockback value
+	 */
 	public double getKnockback() {
 		return knockback;
 	}
 	
+	/**
+	 * Returns whether the {@code Firearm} is disabled
+	 * @return True if disabled, else {@code false}
+	 */
 	public boolean isDisabled() {
 		return disabled;
 	}
 	
+	/**
+	 * Returns the ammo of the {@link Firearm}
+	 * @return The ammo of the {@link Firearm}
+	 */
 	public FirearmAmmo getAmmo() {
 		return ammo;
 	}
 	
+	/**
+	 * Returns whether ammo should be used for this {@code Firearm}
+	 * @return True if ammo is enabled for this {@code Firearm}, else {@code false}
+	 */
 	public boolean useAmmo() {
 		return useAmmo;
 	}
@@ -155,8 +177,8 @@ public class Firearm extends ItemStackPluginItem implements Fillable, Immutable,
 		return useZoom;
 	}
 	
-	public List<PotionEffect> getZoomEffects() {
-		return new ArrayList<>(zoomEffects);
+	public Collection<PotionEffect> getZoomEffects() {
+		return Collections.unmodifiableSet(zoomEffects);
 	}
 	
 	public void addZoomEffects(Player p) {
