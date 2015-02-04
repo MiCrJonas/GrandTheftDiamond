@@ -11,7 +11,7 @@ public class InfinityPotionEffect extends PotionEffect{
 	/**
 	 * Default constructor
 	 * @param type The effect's type
-	 * @param amplifier The effects a
+	 * @param amplifier The effects amplifier
 	 */
 	public InfinityPotionEffect(PotionEffectType type, int amplifier) {
 		super(type, Integer.MAX_VALUE, amplifier);
