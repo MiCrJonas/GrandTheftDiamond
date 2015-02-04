@@ -65,8 +65,14 @@ public class ItemManager {
 			
 			if (config.isList("kits." + kitName + ".items")) {
 				
-				for (Object item : config.getList("kits." + kitName + ".items"))
-					kit.addItem(getItemFromMap((Map<String, Object>) item, true));
+				for (Object item : config.getList("kits." + kitName + ".items")) {
+					if (item instanceof Map) {
+						ItemStack itemStack = getItemFromMap((Map<String, Object>) item, true);
+						if (itemStack != null) {
+							kit.addItem(itemStack);		
+						}	
+					}
+				}
 				
 			}
 			
