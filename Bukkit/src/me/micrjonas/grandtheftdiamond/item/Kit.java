@@ -12,6 +12,9 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+/**
+ * Represents a kit which contains some items
+ */
 public class Kit implements Nameable {
 	
 	private final String name;
