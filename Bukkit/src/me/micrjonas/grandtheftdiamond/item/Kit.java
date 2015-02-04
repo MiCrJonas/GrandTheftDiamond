@@ -18,7 +18,7 @@ import org.bukkit.inventory.ItemStack;
 public class Kit implements Nameable {
 	
 	private final String name;
-	private final List<ItemStack> items;
+	private final List<ItemStack> items = new ArrayList<>();
 	private int delay;
 	
 	/**
@@ -31,7 +31,6 @@ public class Kit implements Nameable {
 			throw new IllegalArgumentException("Name is not allowed to be null");
 		}
 		this.name = name;
-		items = new ArrayList<>();
 	}
 	
 	/**
