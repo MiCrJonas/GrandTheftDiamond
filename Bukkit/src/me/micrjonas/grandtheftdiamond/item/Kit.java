@@ -13,8 +13,8 @@ import org.bukkit.inventory.ItemStack;
 
 public class Kit implements Nameable {
 	
-	private String name;
-	private List<ItemStack> items;
+	private final String name;
+	private final List<ItemStack> items;
 	private int delay;
 	
 	/**
@@ -26,22 +26,24 @@ public class Kit implements Nameable {
 		if (name == null) {
 			throw new IllegalArgumentException("Name is not allowed to be null");
 		}
+		this.name = name;
 		items = new ArrayList<>();
 	}
 	
 	/**
-	 * @param name
-	 * @param delay
+	 * Initializing with an empty item {@link List} and delay 0
+	 * @param name The {@code Kit}'s name
+	 * @param delay The time, a {@link Player} must wait until he can receive this {@code Kit} again in seconds.
+	 * 	{@link #giveToPlayer(Player)} does not check this value
+	 * @param items The {@code Kit}'s items. May be {@code null}
+	 * @throws IllegalArgumentException Thrown if {@code name} is {@code null}
 	 */
-	public Kit(String name, int delay) {
+	public Kit(String name, int delay, Collection<ItemStack> items) throws IllegalArgumentException {
 		this(name);
-		setDelay(delay);
-	}
-	
-	public Kit(String name, Collection<ItemStack> items) {
-		this(name);
-		for (ItemStack item : items) {
-			this.items.add(item.clone());
+		if (items != null) {
+			for (ItemStack item : items) {
+				this.items.add(item.clone());
+			}	
 		}
 	}
 	
