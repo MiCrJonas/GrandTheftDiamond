@@ -1,6 +1,7 @@
 package me.micrjonas.grandtheftdiamond.item;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import me.micrjonas.grandtheftdiamond.util.Nameable;
@@ -48,7 +49,7 @@ public class Kit implements Nameable {
 	}
 	
 	public List<ItemStack> getItems() {
-		return new ArrayList<>(items);
+		return Collections.unmodifiableList(items);
 	}
 	
 	public void addItem(ItemStack item) {
