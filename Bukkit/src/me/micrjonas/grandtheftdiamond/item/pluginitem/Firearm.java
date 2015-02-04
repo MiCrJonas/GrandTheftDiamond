@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 import me.micrjonas.grandtheftdiamond.util.Enums;
+import me.micrjonas.grandtheftdiamond.util.Immutable;
 import me.micrjonas.grandtheftdiamond.util.bukkit.Materials;
 import me.micrjonas.grandtheftdiamond.util.bukkit.PotionEffects;
 
@@ -18,9 +19,9 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
 
 /**
- * Represents a firearm as {@link InteractablePluginItem}
+ * Represents a firearm as {@link InteractablePluginItem}. Each object is immutable
  */
-public class Firearm extends ItemStackPluginItem implements Fillable, InteractablePluginItem {
+public class Firearm extends ItemStackPluginItem implements Fillable, Immutable, InteractablePluginItem {
 	
 	private final Firearms manager;
 	private final String name;
@@ -114,10 +115,18 @@ public class Firearm extends ItemStackPluginItem implements Fillable, Interactab
 		return damage;
 	}
 	
+	/**
+	 * Returns the power value of the firearm
+	 * @return The firearm's power value
+	 */
 	public double getPower() {
 		return power;
 	}
 	
+	/**
+	 * Returns the accuracy value of the firearm
+	 * @return The firearm's accuracy value
+	 */
 	public int getAccuracy() {
 		return accuracy;
 	}
