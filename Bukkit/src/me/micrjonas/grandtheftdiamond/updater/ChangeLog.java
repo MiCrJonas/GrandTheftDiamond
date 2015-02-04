@@ -29,7 +29,7 @@ public class ChangeLog {
 		try {			
 			url = new URL("http://dev.bukkit.org/bukkit-plugins/grand-theft-diamond/files.rss");			
 		} 
-		catch (MalformedURLException ex) {
+		catch (MalformedURLException ex) { // Never reached
 			ex.printStackTrace();
 			url = null;
 		}
@@ -91,7 +91,7 @@ public class ChangeLog {
 	}
 	
 	private void update() throws IOException {
-		HashMap<Version, List<String>> versionFeed = new HashMap<>();
+		Map<Version, List<String>> versionFeed = new HashMap<>();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(CHANGE_LOG_URL.openStream()));
 		
 		String line;
