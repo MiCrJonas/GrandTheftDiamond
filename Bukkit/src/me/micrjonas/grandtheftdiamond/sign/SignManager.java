@@ -39,27 +39,9 @@ public class SignManager extends StringKeyListenerManager<SignHandler> {
 	}
 	
 	/**
-	 * Called when a {@link Player} clicked a sign
-	 * @param lines A copy of the original lines of the sign
-	 * @param clicker The {@link Player} who clicked the sign
-	 */
-	public void signClicked(String[] lines, Player clicker) {
-		String[] parsedLines = new String[3];
-		for (int i = 0; i < 3; i++) {
-			parsedLines[i] = StringUtils.removeColors(lines[i + 1]).toLowerCase();
-		}
-		SignHandler handler = getListener(parsedLines[0]);
-		if (handler != null) {
-			if (handler.isValid(lines, parsedLines)) {
-				handler.signClicked(clicker, lines, parsedLines);
-			}
-		}
-	}
-	
-	/**
-	 * Called when a player clicked a plugin sign
+	 * Called when a {@link Player} clicked a plugin sign
 	 * @param sign The clicked sign
-	 * @param p The player who clicked
+	 * @param p The {@link Player} who clicked
 	 * @throws IllegalArgumentException Thrown if {@code sign} or {@code p} are null
 	 */
 	public void onSignClick(Sign sign, Player p) throws IllegalArgumentException {
