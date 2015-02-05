@@ -8,7 +8,7 @@ import me.micrjonas.grandtheftdiamond.rob.Robable;
 public interface RobEvent {
 	
 	/**
-	 * Returns the robbed object
+	 * Returns the (currently) robbed object
 	 * @return The robbed object. Not allowed to be {@code null}
 	 */
 	Robable getRobbed();
