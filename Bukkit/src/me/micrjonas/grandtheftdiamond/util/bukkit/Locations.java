@@ -18,7 +18,7 @@ public class Locations {
 	
 	private Locations() { }
 	
-	public static boolean sameBlock(Location loc1, Location loc2) {
+	public static boolean isSameBlock(Location loc1, Location loc2) {
 		return loc1.getWorld() == loc2.getWorld() &&
 				loc1.getBlockX() == loc2.getBlockX() &&
 				loc1.getBlockY() == loc2.getBlockY() &&
