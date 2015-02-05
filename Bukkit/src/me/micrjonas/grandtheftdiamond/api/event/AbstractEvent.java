@@ -9,7 +9,7 @@ import org.bukkit.event.HandlerList;
 /**
  * Super class of all Grand Theft Diamond events
  */
-public abstract class GrandTheftDiamondEvent extends Event {
+public abstract class AbstractEvent extends Event {
 
 	private final static Map<Class<?>, HandlerList> handlers = new HashMap<>();
 	
@@ -18,11 +18,11 @@ public abstract class GrandTheftDiamondEvent extends Event {
 	 * @param e The class of the event
 	 * @return The {@code HandlerList} of the given Grand Theft Diamond event class
 	 */
-	public static HandlerList getHandlers(Class<? extends GrandTheftDiamondEvent> e) {
-		HandlerList handlers = GrandTheftDiamondEvent.handlers.get(e);
+	public static HandlerList getHandlers(Class<? extends AbstractEvent> e) {
+		HandlerList handlers = AbstractEvent.handlers.get(e);
 		if (handlers == null) {
 			handlers = new HandlerList();
-			GrandTheftDiamondEvent.handlers.put(e, handlers);
+			AbstractEvent.handlers.put(e, handlers);
 		}
 		return handlers;
 	}
@@ -30,7 +30,7 @@ public abstract class GrandTheftDiamondEvent extends Event {
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}. Each {@link Event} has its own {@link HandlerList}
 	 * @return The {@link Event}'s {@link HandlerList}
-	 * @see GrandTheftDiamondEvent#getHandlers(Class)
+	 * @see AbstractEvent#getHandlers(Class)
 	 */
 	@Override
 	public HandlerList getHandlers() {

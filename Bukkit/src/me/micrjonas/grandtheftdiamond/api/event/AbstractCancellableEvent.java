@@ -8,7 +8,7 @@ import org.bukkit.event.Cancellable;
 /**
  * Super class of all cancellable events
  */
-public abstract class CancellableEvent extends GrandTheftDiamondEvent implements Cancellable {
+public abstract class AbstractCancellableEvent extends AbstractEvent implements Cancellable {
 	
 // Start of static
 	/**
@@ -26,7 +26,7 @@ public abstract class CancellableEvent extends GrandTheftDiamondEvent implements
 	 * @param e The involved event
 	 * @return True if event was not cancelled, else false
 	 */
-	public static boolean fireEvent(CancellableEvent e) {
+	public static boolean fireEvent(AbstractCancellableEvent e) {
 		Bukkit.getPluginManager().callEvent(e);
 		return !e.isCancelled();
 	}
@@ -37,14 +37,14 @@ public abstract class CancellableEvent extends GrandTheftDiamondEvent implements
 	/**
 	 * Creates a new {@code Event} which is not cancelled by default
 	 */
-	protected CancellableEvent() {
+	protected AbstractCancellableEvent() {
 		this(false);
 	}
 	
 	/**
 	 * @param isCancelled Whether the {@code Event} is cancelled by default
 	 */
-	protected CancellableEvent(boolean isCancelled) {
+	protected AbstractCancellableEvent(boolean isCancelled) {
 		cancelled = isCancelled;
 	}
 	
