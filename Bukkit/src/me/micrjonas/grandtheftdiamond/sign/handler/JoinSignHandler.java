@@ -36,7 +36,7 @@ public class JoinSignHandler implements SignHandler {
 
 	@Override
 	public boolean isValid(String[] lines, String[] parsedLines) {
-		return parsedLines[1].equals("cop") || parsedLines[0].equals("civilian");
+		return parsedLines[1].equals("cop") || parsedLines[1].equals("civilian");
 	}
 	
 }
