@@ -11,7 +11,7 @@ import org.bukkit.event.HandlerList;
 /**
  * Fired when a {@link Player} tries to create a {@link House}
  */
-public class HouseCreateEvent extends CreateEvent {
+public class HouseCreateEvent extends AbstractCreateEvent {
 
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}
