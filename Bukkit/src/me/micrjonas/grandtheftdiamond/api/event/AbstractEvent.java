@@ -17,8 +17,12 @@ public abstract class AbstractEvent extends Event {
 	 * Returns the {@code HandlerList} of the given Grand Theft Diamond event class
 	 * @param e The class of the event
 	 * @return The {@code HandlerList} of the given Grand Theft Diamond event class
+	 * @throws IllegalArgumentException Thrown if {@code e} is {@code null}
 	 */
-	public static HandlerList getHandlers(Class<? extends AbstractEvent> e) {
+	public static HandlerList getHandlers(Class<? extends AbstractEvent> e) throws IllegalArgumentException {
+		if (e == null) {
+			throw new IllegalArgumentException("Event to get handlers is not allowed to be null");
+		}
 		HandlerList handlers = AbstractEvent.handlers.get(e);
 		if (handlers == null) {
 			handlers = new HandlerList();
