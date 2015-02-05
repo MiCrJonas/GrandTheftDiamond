@@ -9,19 +9,14 @@ import org.bukkit.entity.Player;
 public enum JailReason implements EventCause {
 
 	/**
-	 * Player was jailed with a command
-	 */
-	COMMAND,
-	
-	/**
-	 * Player was detained by a cop
-	 */
-	DETAIN,
-	
-	/**
 	 * Player was arrested by a cop
 	 */
 	ARREST,
+	
+	/**
+	 * Player was jailed with a command
+	 */
+	COMMAND,
 	
 	/**
 	 * A cop killed a civilian
@@ -31,6 +26,11 @@ public enum JailReason implements EventCause {
 	/**
 	 * Custom jail reason
 	 */
-	CUSTOM;
+	CUSTOM,
+	
+	/**
+	 * Player was detained by a cop
+	 */
+	DETAIN;
 
 }
