@@ -6,7 +6,7 @@ import org.bukkit.event.Cancellable;
 /**
  * Super class of all cancellable player events
  */
-public abstract class CancellablePlayerEvent extends GrandTheftDiamondPlayerEvent implements Cancellable {
+public abstract class AbstractCancellablePlayerEvent extends AbstractPlayerEvent implements Cancellable {
 
 	private boolean cancelled;
 	
@@ -15,7 +15,7 @@ public abstract class CancellablePlayerEvent extends GrandTheftDiamondPlayerEven
 	 * @param who The involved Player
      * @throws IllegalArgumentException Thrown if {@code who} is {@code null}
 	 */
-	protected CancellablePlayerEvent(Player who) throws IllegalArgumentException {
+	protected AbstractCancellablePlayerEvent(Player who) throws IllegalArgumentException {
 		this(who, false);
 	}
 	
@@ -24,7 +24,7 @@ public abstract class CancellablePlayerEvent extends GrandTheftDiamondPlayerEven
 	 * @param isCancelled Sets the default cancellation state of this event
      * @throws IllegalArgumentException Thrown if {@code who} is {@code null}
 	 */
-	protected CancellablePlayerEvent(Player who, boolean isCancelled) throws IllegalArgumentException {
+	protected AbstractCancellablePlayerEvent(Player who, boolean isCancelled) throws IllegalArgumentException {
 		super(who);
 		cancelled = isCancelled;
 	}

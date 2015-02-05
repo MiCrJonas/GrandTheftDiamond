@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 /**
  * Super class of all player events
  */
-public abstract class GrandTheftDiamondPlayerEvent extends AbstractEvent {
+public abstract class AbstractPlayerEvent extends AbstractEvent {
 
 	private final Player who;
 	
@@ -15,7 +15,7 @@ public abstract class GrandTheftDiamondPlayerEvent extends AbstractEvent {
      * @param who The involved player
      * @throws IllegalArgumentException Thrown if {@code who} is {@code null}
      */
-	protected GrandTheftDiamondPlayerEvent(Player who) throws IllegalArgumentException {
+	protected AbstractPlayerEvent(Player who) throws IllegalArgumentException {
 		if (who == null) {
 			throw new IllegalArgumentException("Player is not allowed to be null");
 		}
