@@ -28,8 +28,8 @@ public class HouseCreateEvent extends AbstractCreateEvent {
 	
 	/**
 	 * @param creator The {@link Player} who is creating the {@link House}
-	 * @param owner
-	 * @param spawn
+	 * @param owner The new owner of the {@link House}
+	 * @param spawn The spawn {@link Location} of the {@link House}
 	 */
 	public HouseCreateEvent(Player creator, OfflinePlayer owner, Location spawn) {
 		super(creator);
