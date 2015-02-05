@@ -16,6 +16,12 @@ import me.micrjonas.grandtheftdiamond.listener.SignListener;
 import me.micrjonas.grandtheftdiamond.manager.EconomyManager;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
 import me.micrjonas.grandtheftdiamond.messenger.NoPermissionType;
+import me.micrjonas.grandtheftdiamond.sign.handler.HouseSignHandler;
+import me.micrjonas.grandtheftdiamond.sign.handler.ItemSignHandler;
+import me.micrjonas.grandtheftdiamond.sign.handler.JailSignHandler;
+import me.micrjonas.grandtheftdiamond.sign.handler.JoinSignHandler;
+import me.micrjonas.grandtheftdiamond.sign.handler.LeaveSignHandler;
+import me.micrjonas.grandtheftdiamond.sign.handler.ShopSignHandler;
 import me.micrjonas.grandtheftdiamond.sign.handler.SignHandler;
 import me.micrjonas.grandtheftdiamond.util.StringKeyListenerManager;
 import me.micrjonas.grandtheftdiamond.util.StringUtils;
@@ -46,6 +52,12 @@ public class SignManager extends StringKeyListenerManager<SignHandler> implement
 	
 	private SignManager() {
 		GrandTheftDiamond.registerFileReloadListener(this);
+		registerListener("house", new HouseSignHandler());
+		registerListener("item", new ItemSignHandler());
+		registerListener("jail", new JailSignHandler());
+		registerListener("join", new JoinSignHandler());
+		registerListener("leave", new LeaveSignHandler());
+		registerListener("shop", new ShopSignHandler());
 	}
 	
 	@Override
