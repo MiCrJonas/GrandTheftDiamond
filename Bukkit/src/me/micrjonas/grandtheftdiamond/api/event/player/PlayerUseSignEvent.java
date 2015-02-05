@@ -6,7 +6,7 @@ import me.micrjonas.grandtheftdiamond.sign.SignType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 
-public class PlayerUseSignEvent extends CancellablePlayerEvent {
+public class PlayerUseSignEvent extends AbstractCancellablePlayerEvent {
 
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}

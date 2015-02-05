@@ -6,7 +6,7 @@ import me.micrjonas.grandtheftdiamond.item.pluginitem.PluginItem;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 
-public class PlayerReceiveItemEvent extends CancellablePlayerEvent {
+public class PlayerReceiveItemEvent extends AbstractCancellablePlayerEvent {
 
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}

@@ -1,6 +1,6 @@
 package me.micrjonas.grandtheftdiamond.api.event.stats;
 
-import me.micrjonas.grandtheftdiamond.api.event.player.CancellablePlayerEvent;
+import me.micrjonas.grandtheftdiamond.api.event.player.AbstractCancellablePlayerEvent;
 
 import org.bukkit.entity.Player;
 
@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 /**
  * Super class of all events which get fired when some {@link Player}'s stats change
  */
-public abstract class StatsChangeEvent extends CancellablePlayerEvent {
+public abstract class StatsChangeEvent extends AbstractCancellablePlayerEvent {
 	
 	private final int before;
 	private int after;

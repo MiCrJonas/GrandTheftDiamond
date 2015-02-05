@@ -11,7 +11,7 @@ import org.bukkit.event.HandlerList;
 /**
  * Gets fired when a player tries to leave the game or when a player gets kicked out of the game
  */
-public class PlayerLeaveGameEvent extends CancellablePlayerEvent implements CauseEvent<LeaveReason> {
+public class PlayerLeaveGameEvent extends AbstractCancellablePlayerEvent implements CauseEvent<LeaveReason> {
 
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}

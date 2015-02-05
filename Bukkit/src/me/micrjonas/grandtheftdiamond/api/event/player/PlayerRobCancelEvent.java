@@ -7,7 +7,7 @@ import me.micrjonas.grandtheftdiamond.rob.Robable;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 
-public class PlayerRobCancelEvent extends GrandTheftDiamondPlayerEvent implements RobEvent {
+public class PlayerRobCancelEvent extends AbstractPlayerEvent implements RobEvent {
 
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}

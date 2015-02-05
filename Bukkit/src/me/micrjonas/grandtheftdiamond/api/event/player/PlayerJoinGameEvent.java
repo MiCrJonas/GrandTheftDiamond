@@ -17,7 +17,7 @@ import org.bukkit.event.HandlerList;
 /**
  * Gets fired when a player tries to join the game
  */
-public class PlayerJoinGameEvent extends CancellablePlayerEvent implements CauseEvent<JoinReason> {
+public class PlayerJoinGameEvent extends AbstractCancellablePlayerEvent implements CauseEvent<JoinReason> {
 
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}

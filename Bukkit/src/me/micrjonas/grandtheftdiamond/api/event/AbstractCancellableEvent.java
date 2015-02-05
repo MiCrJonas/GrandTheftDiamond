@@ -1,6 +1,6 @@
 package me.micrjonas.grandtheftdiamond.api.event;
 
-import me.micrjonas.grandtheftdiamond.api.event.player.CancellablePlayerEvent;
+import me.micrjonas.grandtheftdiamond.api.event.player.AbstractCancellablePlayerEvent;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.Cancellable;
@@ -16,7 +16,7 @@ public abstract class AbstractCancellableEvent extends AbstractEvent implements 
 	 * @param e The event to fire
 	 * @return True if event was not cancelled, else false
 	 */
-	public static boolean fireEvent(CancellablePlayerEvent e) {
+	public static boolean fireEvent(AbstractCancellablePlayerEvent e) {
 		Bukkit.getPluginManager().callEvent(e);
 		return !e.isCancelled();
 	}

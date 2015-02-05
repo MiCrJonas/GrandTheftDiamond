@@ -16,7 +16,7 @@ import org.bukkit.inventory.ItemStack;
 /**
  * Fired when a player dies in game. {@code org.bukkit.event.player.PlayerDeathEvent} won't be thrown
  */
-public class PlayerDeathInGameEvent extends GrandTheftDiamondPlayerEvent {
+public class PlayerDeathInGameEvent extends AbstractPlayerEvent {
 	
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}

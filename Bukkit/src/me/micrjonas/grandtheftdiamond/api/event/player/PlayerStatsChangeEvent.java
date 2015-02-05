@@ -8,7 +8,7 @@ import me.micrjonas.grandtheftdiamond.stats.StatsType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 
-public class PlayerStatsChangeEvent extends GrandTheftDiamondPlayerEvent implements CauseEvent<StatsChangeCause> {
+public class PlayerStatsChangeEvent extends AbstractPlayerEvent implements CauseEvent<StatsChangeCause> {
 
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}

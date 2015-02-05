@@ -9,7 +9,7 @@ import org.bukkit.event.HandlerList;
 /**
  * Gets fired when a player gets released from jail
  */
-public class PlayerReleaseFromJailEvent extends GrandTheftDiamondPlayerEvent {
+public class PlayerReleaseFromJailEvent extends AbstractPlayerEvent {
 	
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}

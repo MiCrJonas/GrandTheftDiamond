@@ -12,7 +12,7 @@ import org.bukkit.event.HandlerList;
 /**
  * Gets fixed when a player gets jailed
  */
-public class PlayerJailEvent extends CancellablePlayerEvent implements CauseEvent<JailReason> {
+public class PlayerJailEvent extends AbstractCancellablePlayerEvent implements CauseEvent<JailReason> {
 	
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}

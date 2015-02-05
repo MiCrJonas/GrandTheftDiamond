@@ -10,7 +10,7 @@ import org.bukkit.event.HandlerList;
 /**
  * Gets fired when a player tries to use an plugin item
  */
-public class PlayerUseItemEvent extends CancellablePlayerEvent {
+public class PlayerUseItemEvent extends AbstractCancellablePlayerEvent {
 
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}

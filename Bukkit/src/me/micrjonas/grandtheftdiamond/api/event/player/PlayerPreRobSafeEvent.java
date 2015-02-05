@@ -10,7 +10,7 @@ import org.bukkit.event.HandlerList;
 /**
  * Gets fired before a player starts to rob a safe
  */
-public class PlayerPreRobSafeEvent extends CancellablePlayerEvent implements RobEvent {
+public class PlayerPreRobSafeEvent extends AbstractCancellablePlayerEvent implements RobEvent {
 	
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}

@@ -16,7 +16,7 @@ import org.bukkit.inventory.ItemStack;
 /**
  * Gets fired after a player robbed a safe
  */
-public class PlayerRobEvent extends GrandTheftDiamondPlayerEvent implements RobEvent {
+public class PlayerRobEvent extends AbstractPlayerEvent implements RobEvent {
 	
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}

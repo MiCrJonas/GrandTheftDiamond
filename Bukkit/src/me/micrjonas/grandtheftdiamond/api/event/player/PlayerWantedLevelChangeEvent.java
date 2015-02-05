@@ -11,7 +11,7 @@ import org.bukkit.event.HandlerList;
 /**
  * Gets fired when the wanted level of a player gets changed
  */
-public class PlayerWantedLevelChangeEvent extends CancellablePlayerEvent implements CauseEvent<WantedLevelChangeCause> {
+public class PlayerWantedLevelChangeEvent extends AbstractCancellablePlayerEvent implements CauseEvent<WantedLevelChangeCause> {
 
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}
