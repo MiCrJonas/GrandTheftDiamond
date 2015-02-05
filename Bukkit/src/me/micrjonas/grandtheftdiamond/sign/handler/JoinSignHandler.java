@@ -17,27 +17,26 @@ public class JoinSignHandler implements SignHandler {
 
 	@Override
 	public void signClicked(Player clicker, String[] lines, String[] parsedLines) {
-		if (TemporaryPluginData.getInstance().isIngame(clicker)) {
+		if (!TemporaryPluginData.getInstance().isIngame(clicker)) {
+			if (parsedLines[0].equals("cop")) {
+				if (GrandTheftDiamond.checkPermission(clicker, "use.sign.join.cop", true, NoPermissionType.USE)) {
+					GameManager.getInstance().joinGame(clicker, Team.COP, JoinReason.SIGN);
+				}
+			}
+			else { // Contains civilian, checked in isValid()
+				if (GrandTheftDiamond.checkPermission(clicker, "use.sign.join.civilian", true, NoPermissionType.USE)) {
+					GameManager.getInstance().joinGame(clicker, Team.CIVILIAN, JoinReason.SIGN);
+				}
+			}
+		}
+		else {
 			Messenger.getInstance().sendPluginMessage(clicker, "alreadyIngame");
-			return;
-		}
-		if (lines[1].contains("cop")) {
-			if (GrandTheftDiamond.checkPermission(clicker, "use.sign.join.cop", true, NoPermissionType.USE)) {
-				GameManager.getInstance().joinGame(clicker, Team.COP, JoinReason.SIGN);
-			}
-		}
-			
-		else if (lines[1].contains("civilian")) {
-			if (GrandTheftDiamond.checkPermission(clicker, "use.sign.join.civilian", true, NoPermissionType.USE)) {
-				GameManager.getInstance().joinGame(clicker, Team.CIVILIAN, JoinReason.SIGN);
-			}
 		}
 	}
 
 	@Override
 	public boolean isValid(String[] lines, String[] parsedLines) {
-		// TODO Auto-generated method stub
-		return false;
+		return parsedLines[1].equals("cop") || parsedLines[0].equals("civilian");
 	}
 	
 }
