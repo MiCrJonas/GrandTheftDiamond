@@ -22,8 +22,7 @@ public class BlockBreakListener implements Listener, FileReloadListener {
 		GrandTheftDiamond.registerFileReloadListener(this);
 		
 	}
-	
-	
+
 	@Override
 	public void configurationReloaded(PluginFile file, FileConfiguration fileConfiguration) {
 		
