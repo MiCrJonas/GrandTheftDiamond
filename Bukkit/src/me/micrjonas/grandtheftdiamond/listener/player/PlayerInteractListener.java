@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.Team;
-import me.micrjonas.grandtheftdiamond.api.event.CancellableEvent;
+import me.micrjonas.grandtheftdiamond.api.event.AbstractCancellableEvent;
 import me.micrjonas.grandtheftdiamond.api.event.cause.JailReason;
 import me.micrjonas.grandtheftdiamond.api.event.player.PlayerUseItemEvent;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
@@ -208,7 +208,7 @@ public class PlayerInteractListener implements Listener, FileReloadListener {
 						boolean cancelledNoFuel = interactable instanceof Fillable
 								&& !((Fillable) interactable).hasFuel(p);
 						PlayerUseItemEvent e2 = new PlayerUseItemEvent(p, interactable, cancelledNoFuel);
-						if (CancellableEvent.fireEvent(e2)) {
+						if (AbstractCancellableEvent.fireEvent(e2)) {
 							return interactable;
 						}
 						else if (e2.isCancelledNoFuel()) {

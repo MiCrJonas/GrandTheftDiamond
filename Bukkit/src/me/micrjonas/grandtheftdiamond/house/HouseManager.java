@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.UUID;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.api.event.CancellableEvent;
+import me.micrjonas.grandtheftdiamond.api.event.AbstractCancellableEvent;
 import me.micrjonas.grandtheftdiamond.api.event.HouseCreateEvent;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
@@ -201,7 +201,7 @@ public class HouseManager implements StorableManager<House>, FileReloadListener 
 				throw new IllegalArgumentException("world of pawn is not allowed to be null");
 			}
 		}
-		if (loadedFromConfig || CancellableEvent.fireEvent(new HouseCreateEvent(creator, owner, spawn))) {
+		if (loadedFromConfig || AbstractCancellableEvent.fireEvent(new HouseCreateEvent(creator, owner, spawn))) {
 			House house = new House(identifier, spawn, owner, door == null ? null : new SimpleLocation(door.getLocation()), members, price);
 			if (owner != null) {
 				if (!playerHouses.containsKey(owner.getUniqueId())) {

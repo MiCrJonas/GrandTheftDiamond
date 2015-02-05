@@ -1,13 +1,13 @@
 package me.micrjonas.grandtheftdiamond.api.event.player;
 
-import me.micrjonas.grandtheftdiamond.api.event.GrandTheftDiamondEvent;
+import me.micrjonas.grandtheftdiamond.api.event.AbstractEvent;
 
 import org.bukkit.entity.Player;
 
 /**
  * Super class of all player events
  */
-public abstract class GrandTheftDiamondPlayerEvent extends GrandTheftDiamondEvent {
+public abstract class GrandTheftDiamondPlayerEvent extends AbstractEvent {
 
 	private final Player who;
 	

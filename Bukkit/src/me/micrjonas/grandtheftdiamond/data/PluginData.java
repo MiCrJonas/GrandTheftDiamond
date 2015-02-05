@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.Team;
-import me.micrjonas.grandtheftdiamond.api.event.CancellableEvent;
+import me.micrjonas.grandtheftdiamond.api.event.AbstractCancellableEvent;
 import me.micrjonas.grandtheftdiamond.api.event.cause.WantedLevelChangeCause;
 import me.micrjonas.grandtheftdiamond.api.event.player.PlayerWantedLevelChangeEvent;
 import me.micrjonas.grandtheftdiamond.arena.ArenaType;
@@ -500,7 +500,7 @@ public class PluginData implements FileReloadListener, Listener {
 				getWantedLevel(p), 
 				level);
 		
-		if (CancellableEvent.fireEvent(e)) {
+		if (AbstractCancellableEvent.fireEvent(e)) {
 			FileManager.getInstance().getPlayerData(p).set("wantedLevel", e.getNewWantedLevel());
 			p.setLevel(e.getNewWantedLevel());
 			return true;

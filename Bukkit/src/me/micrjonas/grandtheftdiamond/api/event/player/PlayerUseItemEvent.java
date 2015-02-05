@@ -1,6 +1,6 @@
 package me.micrjonas.grandtheftdiamond.api.event.player;
 
-import me.micrjonas.grandtheftdiamond.api.event.GrandTheftDiamondEvent;
+import me.micrjonas.grandtheftdiamond.api.event.AbstractEvent;
 import me.micrjonas.grandtheftdiamond.item.pluginitem.InteractablePluginItem;
 
 import org.bukkit.entity.Player;
@@ -15,8 +15,8 @@ public class PlayerUseItemEvent extends CancellablePlayerEvent {
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}
 	 * @return The {@link Event}'s {@link HandlerList}
-	 * @see GrandTheftDiamondEvent#getHandlers(Class)
-	 * @see GrandTheftDiamondEvent#getHandlers()
+	 * @see AbstractEvent#getHandlers(Class)
+	 * @see AbstractEvent#getHandlers()
 	 */
 	public static HandlerList getHandlerList() {
 		return getHandlers(PlayerUseItemEvent.class);

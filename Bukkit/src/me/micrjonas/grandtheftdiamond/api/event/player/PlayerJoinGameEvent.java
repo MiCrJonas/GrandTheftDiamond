@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.micrjonas.grandtheftdiamond.Team;
-import me.micrjonas.grandtheftdiamond.api.event.GrandTheftDiamondEvent;
+import me.micrjonas.grandtheftdiamond.api.event.AbstractEvent;
 import me.micrjonas.grandtheftdiamond.api.event.cause.CauseEvent;
 import me.micrjonas.grandtheftdiamond.api.event.cause.JoinReason;
 import me.micrjonas.grandtheftdiamond.item.Kit;
@@ -22,8 +22,8 @@ public class PlayerJoinGameEvent extends CancellablePlayerEvent implements Cause
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}
 	 * @return The {@link Event}'s {@link HandlerList}
-	 * @see GrandTheftDiamondEvent#getHandlers(Class)
-	 * @see GrandTheftDiamondEvent#getHandlers()
+	 * @see AbstractEvent#getHandlers(Class)
+	 * @see AbstractEvent#getHandlers()
 	 */
 	public static HandlerList getHandlerList() {
 		return getHandlers(PlayerJoinGameEvent.class);

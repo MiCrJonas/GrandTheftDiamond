@@ -3,7 +3,7 @@ package me.micrjonas.grandtheftdiamond.api.event.player;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.micrjonas.grandtheftdiamond.api.event.GrandTheftDiamondEvent;
+import me.micrjonas.grandtheftdiamond.api.event.AbstractEvent;
 import me.micrjonas.grandtheftdiamond.api.event.RobEvent;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
@@ -21,8 +21,8 @@ public class PlayerRobEvent extends GrandTheftDiamondPlayerEvent implements RobE
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}
 	 * @return The {@link Event}'s {@link HandlerList}
-	 * @see GrandTheftDiamondEvent#getHandlers(Class)
-	 * @see GrandTheftDiamondEvent#getHandlers()
+	 * @see AbstractEvent#getHandlers(Class)
+	 * @see AbstractEvent#getHandlers()
 	 */
 	public static HandlerList getHandlerList() {
 		return getHandlers(PlayerRobEvent.class);

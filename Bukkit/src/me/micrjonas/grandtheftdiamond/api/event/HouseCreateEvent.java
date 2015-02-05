@@ -16,8 +16,8 @@ public class HouseCreateEvent extends CreateEvent {
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}
 	 * @return The {@link Event}'s {@link HandlerList}
-	 * @see GrandTheftDiamondEvent#getHandlers(Class)
-	 * @see GrandTheftDiamondEvent#getHandlers()
+	 * @see AbstractEvent#getHandlers(Class)
+	 * @see AbstractEvent#getHandlers()
 	 */
 	public static HandlerList getHandlerList() {
 		return getHandlers(HouseCreateEvent.class);

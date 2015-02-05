@@ -5,7 +5,7 @@ import org.bukkit.command.CommandSender;
 /**
  * Super class of all Events that get fired when something gets created
  */
-public abstract class CreateEvent extends CancellableEvent {
+public abstract class CreateEvent extends AbstractCancellableEvent {
 	
 	private final CommandSender creator;
 	
