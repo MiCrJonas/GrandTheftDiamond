@@ -436,18 +436,24 @@ public class GrandTheftDiamondPlugin extends JavaPlugin {
 	 * Unregisters all aliases for the given command executor
 	 * @param executor The executor to unregister
 	 * @return A Set of all aliases used for the unregistered executor
+	 * @throws IllegalArgumentException Thrown if {@code executor} is {@code null}
 	 */
-	public synchronized Set<String> unregisterCommand(CommandExecutor executor) {
-		Iterator<Entry<String, CommandExecutor>> iter = commands.entrySet().iterator();
-		Set<String> aliases = new HashSet<>();
-		while (iter.hasNext()) {
-			Entry<String, CommandExecutor> entry = iter.next();
-			if (entry.getValue() == executor) {
-				aliases.remove(entry.getKey());
-				iter.remove();
-			}
+	public Set<String> unregisterCommand(CommandExecutor executor) throws IllegalArgumentException {
+		if (executor == null) {
+			throw new IllegalArgumentException("Executor to unregister is not allowed to be null");
 		}
-		return aliases;
+		synchronized (commands) {
+			Iterator<Entry<String, CommandExecutor>> iter = commands.entrySet().iterator();
+			Set<String> aliases = new HashSet<>();
+			while (iter.hasNext()) {
+				Entry<String, CommandExecutor> entry = iter.next();
+				if (entry.getValue() == executor) {
+					aliases.remove(entry.getKey());
+					iter.remove();
+				}
+			}
+			return aliases;	
+		}
 	}
 	
 	/**
