@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
@@ -333,7 +334,7 @@ public final class GrandTheftDiamond {
 	/**
 	 * Equivalent to {@link GrandTheftDiamondPlugin#getRegisteredCommands()}
 	 */
-	public static List<String> getRegisteredCommands() {
+	public static Set<String> getRegisteredCommands() {
 		return getPlugin().getRegisteredCommands();
 	}
 	
