@@ -11,7 +11,7 @@ import org.bukkit.event.HandlerList;
  */
 public abstract class AbstractEvent extends Event {
 
-	private final static Map<Class<?>, HandlerList> handlers = new HashMap<>();
+	private final static Map<Class<? extends AbstractEvent>, HandlerList> handlers = new HashMap<>();
 	
 	/**
 	 * Returns the {@code HandlerList} of the given Grand Theft Diamond event class
