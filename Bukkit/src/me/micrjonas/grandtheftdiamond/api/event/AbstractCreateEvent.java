@@ -5,7 +5,7 @@ import org.bukkit.command.CommandSender;
 /**
  * Super class of all Events that get fired when something gets created
  */
-public abstract class CreateEvent extends AbstractCancellableEvent {
+public abstract class AbstractCreateEvent extends AbstractCancellableEvent {
 	
 	private final CommandSender creator;
 	
@@ -14,7 +14,7 @@ public abstract class CreateEvent extends AbstractCancellableEvent {
 	 * @param creator The creator of the new created object
 	 * @throws IllegalArgumentException Thrown if {@code creator} is null
 	 */
-	protected CreateEvent(CommandSender creator) throws IllegalArgumentException {
+	protected AbstractCreateEvent(CommandSender creator) throws IllegalArgumentException {
 		if (creator  == null) {
 			throw new IllegalArgumentException("Creator is not allowed to be null");
 		}
