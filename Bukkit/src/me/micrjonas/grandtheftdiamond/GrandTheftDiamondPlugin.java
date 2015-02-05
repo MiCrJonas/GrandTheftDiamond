@@ -413,7 +413,7 @@ public class GrandTheftDiamondPlugin extends JavaPlugin {
 	 * @param executor The command executor
 	 * @param name The name of the command, ignores case sensitive
 	 * @param optionalAliases Optional command aliases
-	 * @throws IllegalArgumentException Thrown if the execcutor or the command name is {@code null}
+	 * @throws IllegalArgumentException Thrown if the executor or the command name is {@code null}
 	 */
 	public void registerCommand(CommandExecutor executor, String name, String... optionalAliases) throws IllegalArgumentException {
 		if (executor == null) {
