@@ -481,11 +481,12 @@ public class GrandTheftDiamondPlugin extends JavaPlugin {
 	}
 	
 	/**
-	 * Returns a List with all registered commands
-	 * @return A List with all registered commands and its aliases, the command names are not sorted naturally
+	 * Returns a {@link List} with all registered commands. The {@link List} is unmodifiable.
+	 * @return A {@link List} with all registered commands and its aliases, the command names are not sorted naturally
+	 * @see Collections#unmodifiableSet(Set)
 	 */
-	public List<String> getRegisteredCommands() {
-		return new ArrayList<>(commands.keySet());
+	public Set<String> getRegisteredCommands() {
+		return Collections.unmodifiableSet(commands.keySet());
 	}
 	
 	/**
