@@ -52,10 +52,13 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 	 * @param p The {@link Player}
 	 * @param item The item to add
 	 * @param amount The amount of items
-	 * @throws IllegalArgumentException Thrown if {@code item} is {@code null}
+	 * @throws IllegalArgumentException Thrown if {@code item} or {@code p} is {@code null} or if the amount is invalid
 	 * @see PluginItem#giveToPlayer(Player, int)
 	 */
 	public static void giveToPlayer(Player p, PluginItem item, int amount) throws IllegalArgumentException {
+		if (item == null) {
+			throw new IllegalArgumentException("Item is not allowed to be null");
+		}
 		item.giveToPlayer(p, amount);
 		Messenger.getInstance().sendPluginMessage(p, "itemReceived", new String[]{"%item%"}, new String[]{item.getName()});
 	}
