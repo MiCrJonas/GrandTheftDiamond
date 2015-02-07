@@ -44,7 +44,7 @@ public class SignManager extends StringKeyListenerManager<SignHandler> {
 	 * @param p The {@link Player} who clicked
 	 * @throws IllegalArgumentException Thrown if {@code sign} or {@code p} are null
 	 */
-	public void onSignClick(Sign sign, Player p) throws IllegalArgumentException {
+	public void signClicked(Sign sign, Player p) throws IllegalArgumentException {
 		String[] lines = new String[3];
 		String[] parsedLines = new String[3];
 		for (int i = 0; i < 3; i++) {
