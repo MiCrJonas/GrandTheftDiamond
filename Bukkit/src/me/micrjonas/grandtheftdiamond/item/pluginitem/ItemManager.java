@@ -118,6 +118,11 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 		}
 	}
 	
+	@Override
+	public Collection<PluginItem> getAllObjects() {
+		return Collections.unmodifiableCollection(items.values());
+	}
+	
 	/**
 	 * Registers an item to get it with {@link #getItem(String)}
 	 * @param item The item to register
@@ -202,13 +207,8 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 		return items.containsKey(name.toLowerCase());
 	}
 	
-	@Override
-	public Collection<PluginItem> getAllObjects() {
-		return Collections.unmodifiableCollection(items.values());
-	}
-	
 	/**
-	 * Returns a new sorted {@link List} with all items
+	 * Returns a new sorted {@link List} with all item names
 	 * @return A new sorted {@link List} as a copy of all registered items
 	 */
 	public List<String> getAllItemsSorted() {
