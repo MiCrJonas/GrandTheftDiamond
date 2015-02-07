@@ -17,12 +17,16 @@ import me.micrjonas.grandtheftdiamond.item.Kit;
 import me.micrjonas.grandtheftdiamond.listener.player.PlayerInteractListener;
 import me.micrjonas.grandtheftdiamond.manager.Manager;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
+import me.micrjonas.grandtheftdiamond.util.StringUtils;
+import me.micrjonas.grandtheftdiamond.util.bukkit.LeveledEnchantment;
 
+import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 
 /**
@@ -63,6 +67,41 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 		}
 		item.giveToPlayer(p, amount);
 		Messenger.getInstance().sendPluginMessage(p, "itemReceived", new String[]{"%item%"}, new String[]{item.getName()});
+	}
+	
+	/**
+	 * Creates an {@link ItemStack} with optional item meta
+	 * @param type The type of the {@link ItemStack}
+	 * @param amount The amount of the {@link ItemStack}
+	 * @param name The display name of the {@link ItemStack}. May be {@code null}
+	 * @param lore The lore of the {@link ItemStack}. May be {@code null}
+	 * @param enchantments The enchantments of the {@link ItemStack}. May be {@code null}
+	 * @return The new {@link ItemStack}
+	 * @throws IllegalArgumentException Thrown if {@code type} is {@code null} or {@code} is invalid
+	 */
+	public static ItemStack createItem(Material type, int amount, String name, List<String> lore,
+			Collection<LeveledEnchantment> enchantments) throws IllegalArgumentException {
+		if (type == null) {
+			throw new IllegalArgumentException("Type of item is not allowed to be null");
+		}
+		if (lore != null) {
+			for (int i = 0; i < lore.size(); i++) {
+				lore.set(i, StringUtils.translateColors(lore.get(i)));
+			}
+		}
+		ItemStack item = new ItemStack(type, amount);
+	    ItemMeta meta = item.getItemMeta();
+	    if (name != null) {
+	    	meta.setDisplayName(StringUtils.translateColors(name));
+	    }
+	    meta.setLore(lore);
+	    item.setItemMeta(meta);
+	    if (enchantments != null) {
+		    for (LeveledEnchantment enchantment : enchantments) {
+		    	enchantment.addToItem(item, true);	
+		    }
+	    }
+	    return item;
 	}
 	
 	private static Map<String, ConfigurationSection> getEntries(FileConfiguration fileConfiguration, String path, String subPath) {
@@ -123,6 +162,33 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 			// Taser
 			Taser taser = new Taser(fileConfiguration.getConfigurationSection(TASER_PATH));
 			registerInteractableItem(taser, Taser.NAME, taser.getItem(1));
+			
+			for (String kitName : fileConfiguration.getConfigurationSection("kits").getKeys(false)) {
+				Kit kit = new Kit(kitName);
+				if (fileConfiguration.isList("kits." + kitName + ".items")) {
+					for (Object item : fileConfiguration.getList("kits." + kitName + ".items")) {
+						if (item instanceof Map) {
+							@SuppressWarnings("unchecked")
+							ItemStack itemStack = me.micrjonas.grandtheftdiamond.item.ItemManager.getItemFromMap((Map<String, Object>) item, true);
+							if (itemStack != null) {
+								kit.addItem(itemStack);		
+							}	
+						}
+					}
+				}
+				kits.put(kitName.toLowerCase(), kit);
+			}
+			
+			for (Team team : Team.getRealTeams()) {
+				List<Kit> startKits = new ArrayList<>();
+				for (String kitName : fileConfiguration.getStringList("startKits." + team.name().toLowerCase())) {
+					Kit kit = getKit(kitName);
+					if (kit != null) {
+						startKits.add(kit);
+					}
+				}
+				this.startKits[team.ordinal()] = startKits;
+			}
 		}
 	}
 	
