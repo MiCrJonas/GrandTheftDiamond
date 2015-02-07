@@ -66,7 +66,7 @@ public class GameManager implements FileReloadListener {
 	 * Lets a player join the game
 	 * @param p The player who should join the game
 	 * @param team The new team for the player
-	 * @param reason The reason why the player should join the game. If null, it will be set to {@code JoinReason.CUSTOM}
+	 * @param reason The reason why the player should join the game. If {@code null}, it will be set to {@link JoinReason#CUSTOM}
 	 * @throws IllegalArgumentException Thrown if {@code p} or {@code team} are null
 	 */
 	@SuppressWarnings("deprecation")
