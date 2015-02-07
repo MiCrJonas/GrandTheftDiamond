@@ -1,12 +1,15 @@
 package me.micrjonas.grandtheftdiamond.item.pluginitem;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
@@ -19,10 +22,12 @@ import me.micrjonas.grandtheftdiamond.manager.Manager;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
 import me.micrjonas.grandtheftdiamond.util.StringUtils;
 import me.micrjonas.grandtheftdiamond.util.bukkit.LeveledEnchantment;
+import me.micrjonas.grandtheftdiamond.util.bukkit.Materials;
 
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -104,6 +109,49 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 	    return item;
 	}
 	
+	/**
+	 * Creates a new {@link ItemStack} with data of a {@link Map}
+	 * @param data The {@link ItemStack}'s data
+	 * @param useAmountFromMap Whether the amount stored in the {@link Map} should be use or 1
+	 * @return The new created {@link ItemStack}. May be {@code null} if some required data is missing in the {@link Map}
+	 * @throws IllegalArgumentException Thrown if {@code data} is {@code null}
+	 */
+	@SuppressWarnings("unchecked")
+	public static ItemStack getItemFromMap(Map<String, Object> data, boolean useAmountFromMap) throws IllegalArgumentException {
+		if (data == null) {
+			throw new IllegalArgumentException("Item data is not allowed to be null");
+		}
+		if (!data.containsKey("item")) {
+			return null;
+		}
+		Material type = Materials.getMaterialOrDefault((String) data.get("item"), null);
+		int amount = useAmountFromMap && data.containsKey("amount") && data.get("amount") instanceof Integer ? (int) data.get("amount") : 1;
+		if (type == null) {
+			return null;
+		}
+		String name = data.containsKey("name") ? (String) data.get("name") : null;
+		List<String> lore = null;
+		if (data.containsKey("lore")) {
+			if (data.get("lore") instanceof List) {
+				lore = (List<String>) data.get("lore");
+			}
+			else if (data.get("lore") instanceof String) {
+				lore = Arrays.asList((String) data.get("lore"));
+			}
+		}
+		Collection<LeveledEnchantment> enchantments = null;
+		if (data.containsKey("enchantments")) {
+			if (data.get("enchantments") instanceof List) {
+				enchantments = getEnchantments((List<String>) data.get("enchantments"));
+			}
+			else if (data.get("enchantments") instanceof String) {
+				enchantments = new HashSet<>();
+				enchantments.add(getEnchantment((String) data.get("enchantments")));
+			}
+		}
+		return createItem(type, amount, name, lore, enchantments);
+	}
+	
 	private static Map<String, ConfigurationSection> getEntries(FileConfiguration fileConfiguration, String path, String subPath) {
 		Map<String, ConfigurationSection> entries = new HashMap<String, ConfigurationSection>();
 		for (String absolutePath : fileConfiguration.getConfigurationSection(path).getKeys(false)) {
@@ -119,6 +167,49 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 			}
 		}
 		return entries;
+	}
+	
+	private static Set<LeveledEnchantment> getEnchantments(List<String> enchantmentConfigurations) {
+		Set<LeveledEnchantment> enchantments = new HashSet<>();
+		for (String enchantmentParts : enchantmentConfigurations) {
+			LeveledEnchantment enchantment = getEnchantment(enchantmentParts);
+			if (enchantment != null) {
+				enchantments.add(enchantment);
+			}
+		}
+		return enchantments;
+	}
+	
+	@SuppressWarnings("deprecation")
+	private static LeveledEnchantment getEnchantment(String enchantmentConfiguration) {
+		String[] parts = enchantmentConfiguration.split(" ");
+		Enchantment enchantment = null;
+		try {
+			enchantment = Enchantment.getByName(parts[0].toUpperCase());
+		}
+		catch (IllegalArgumentException ex) {
+			try {
+				enchantment = Enchantment.getById(Integer.parseInt(parts[0]));
+			}
+			catch (NumberFormatException ex2) { }
+		}
+		if (enchantment != null) {
+			int level = 1;
+			if (parts.length > 1) {
+				try {
+					level = Integer.parseInt(parts[1]);
+				}
+				catch (NumberFormatException ex) { }
+			}
+			if (level > enchantment.getMaxLevel()) {
+				level = enchantment.getMaxLevel();
+			}
+			else if (level < enchantment.getStartLevel()) {
+				level = enchantment.getStartLevel();
+			}
+			return new LeveledEnchantment(enchantment, level);
+		}
+		return null;
 	}
 // End of static
 	
@@ -169,7 +260,7 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 					for (Object item : fileConfiguration.getList("kits." + kitName + ".items")) {
 						if (item instanceof Map) {
 							@SuppressWarnings("unchecked")
-							ItemStack itemStack = me.micrjonas.grandtheftdiamond.item.ItemManager.getItemFromMap((Map<String, Object>) item, true);
+							ItemStack itemStack = getItemFromMap((Map<String, Object>) item, true);
 							if (itemStack != null) {
 								kit.addItem(itemStack);		
 							}	
