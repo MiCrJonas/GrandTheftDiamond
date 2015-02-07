@@ -15,7 +15,7 @@ import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.data.player.PlayerDataUser;
 import me.micrjonas.grandtheftdiamond.data.storage.StorableManager;
 import me.micrjonas.grandtheftdiamond.inventory.merchant.Offer;
-import me.micrjonas.grandtheftdiamond.item.ItemManager;
+import me.micrjonas.grandtheftdiamond.item.pluginitem.ItemManager;
 import me.micrjonas.grandtheftdiamond.util.bukkit.Locations;
 
 import org.bukkit.Bukkit;
