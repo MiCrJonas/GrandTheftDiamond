@@ -145,15 +145,17 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 	}
 	
 	/**
-	 * Returns a {@link Collection} of all start {@link Kit}s of a specific {@link Team}
+	 * Returns a {@link Collection} of all start {@link Kit}s of a specific {@link Team}. The {@link Collection} is not
+	 *  modifiable. See: {@link Collections#unmodifiableCollection(Collection)}
 	 * @param team The {@link Team}
 	 * @return A {@link Collection} of all start {@link Kit}s of a specific {@link Team}. May be empty, but is never {@code null}
 	 * @throws IllegalArgumentException Thrown if {@code team} is not a real {@link Team}
+	 * @see Collections#unmodifiableCollection(Collection)
 	 * @see Team#requiresRealTeam(Team)
 	 */
 	public Collection<Kit> getStartKits(Team team) throws IllegalArgumentException {
 		Team.requiresRealTeam(team);
-		return startKits[team.ordinal()];
+		return Collections.unmodifiableCollection(startKits[team.ordinal()]);
 	}
 	
 	/**
