@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -262,6 +263,37 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 		return getItemFromSection(section, useAmountFromConfig);
 	}
 	
+	/**
+	 * Saves an {@link ItemStack} to a {@link Map}}
+	 * @param item The {@link ItemStack} to store
+	 * @return A new {@link Map} with the {@code item}'s data
+	 */
+	public static Map<String, Object> itemToMap(ItemStack item) {
+		if (item == null) {
+			return null;
+		}
+		Map<String, Object> data = new LinkedHashMap<>();
+		data.put("item", item.getType().name());
+		data.put("amount", item.getAmount());
+		if (item.hasItemMeta()) {
+			if (item.getItemMeta().hasDisplayName()) {
+				data.put("name", item.getItemMeta().getDisplayName());
+			}
+			if (item.getItemMeta().hasLore()) {
+				data.put("lore", item.getItemMeta().getLore());
+			}
+		}
+		Map<Enchantment, Integer> enchantments = item.getEnchantments();
+		if (enchantments.size() > 0) {
+			List<String> enchantmentData = new ArrayList<>();
+			for (Entry<Enchantment, Integer> ench : enchantments.entrySet()) {
+				enchantmentData.add(ench.getKey().getName() + " " + ench.getValue());
+			}
+			data.put("enchantments", enchantmentData);
+		}
+		return data;
+	}
+	
 	private static Map<String, ConfigurationSection> getEntries(FileConfiguration fileConfiguration, String path, String subPath) {
 		Map<String, ConfigurationSection> entries = new HashMap<String, ConfigurationSection>();
 		for (String absolutePath : fileConfiguration.getConfigurationSection(path).getKeys(false)) {
@@ -423,6 +455,28 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 	public Collection<Kit> getStartKits(Team team) throws IllegalArgumentException {
 		Team.requiresRealTeam(team);
 		return Collections.unmodifiableCollection(startKits[team.ordinal()]);
+	}
+	
+	/**
+	 * Returns a {@link Collection} of all start {@link Kit}s for a {@link Player} and does a permission check for
+	 * 	each {@link Kit}. Permission is <i>grandtheftdiamond.startkit.{@link Kit#getName()}</i>
+	 * @param team The {@link Player}'s {@link Team}
+	 * @param p The {@link Player}
+	 * @return A {@link Collection} of all start {@link Kit}s for the {@link Player}
+	 * @throws IllegalArgumentException Thrown if {@code team} is not a real {@link Team} or {@code p} is {@code null}
+	 * @see Team#requiresRealTeam(Team)
+	 */
+	public Collection<Kit> getPlayerStartKits(Team team, Player p) throws IllegalArgumentException {
+		if (p == null) {
+			throw new IllegalArgumentException("Player is not allowed to be null");
+		}
+		List<Kit> playerKits = new ArrayList<Kit>(getStartKits(team).size());
+		for (Kit kit : getStartKits(team)) {
+			if (GrandTheftDiamond.checkPermission(p, "startkit." + kit.getName())) {
+				playerKits.add(kit);
+			}
+		}
+		return playerKits;
 	}
 	
 	/**
