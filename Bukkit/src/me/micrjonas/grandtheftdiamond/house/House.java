@@ -30,7 +30,7 @@ import org.bukkit.block.Block;
  */
 public class House implements Removeable, DynmapDisplayable, Storable {
 	
-	private final String identifier;
+	private final String name;
 	private final Set<OfflinePlayer> members;
 	private String markerLabel;
 	private String markerLabelOwned;
@@ -41,8 +41,8 @@ public class House implements Removeable, DynmapDisplayable, Storable {
 	private int price;
 	private boolean removed;
 	
-	House(String identifier, Location spawn, OfflinePlayer owner, SimpleLocation door, Set<OfflinePlayer> members, int price) {
-		this.identifier = identifier;
+	House(String name, Location spawn, OfflinePlayer owner, SimpleLocation door, Set<OfflinePlayer> members, int price) {
+		this.name = name;
 		this.spawn = spawn;
 		this.owner = owner;
 		setDoor(door, true);
@@ -109,7 +109,7 @@ public class House implements Removeable, DynmapDisplayable, Storable {
 	
 	@Override
 	public String getName() {
-		return getIdentifier();
+		return name;
 	}
 	
 	@Override
@@ -140,14 +140,6 @@ public class House implements Removeable, DynmapDisplayable, Storable {
 	
 	void setInvalid() {
 		removed = true;
-	}
-	
-	/**
-	 * Returns the identifier of this house
-	 * @return The house's identifier
-	 */
-	public String getIdentifier() {
-		return identifier;
 	}
 	
 	/**
