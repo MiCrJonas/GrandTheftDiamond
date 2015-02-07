@@ -131,7 +131,7 @@ public class PlayerInteractListener implements Listener, FileReloadListener {
 					else if (e.getClickedBlock().getType() == Material.SIGN_POST || e.getClickedBlock().getType() == Material.WALL_SIGN) {
 						Sign s = (Sign) e.getClickedBlock().getState();
 						if (s.getLine(0).equals(signTitle)) {
-							SignManager.getInstance().onSignClick(s, p);
+							SignManager.getInstance().signClicked(s, p);
 						}
 					}
 					else if (e.getClickedBlock().getType() == safeType) {
