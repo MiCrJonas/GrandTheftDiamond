@@ -14,7 +14,7 @@ import org.bukkit.event.HandlerList;
 /**
  * Fired when a {@link CommandSender} tries to create a new {@link Gang}
  */
-public class GangCreateEvent extends AbstractCreateEvent {
+public class GangCreateEvent extends CreateEvent {
 	
 	/**
 	 * Returns the {@link Event}'s {@link HandlerList}
