@@ -12,6 +12,7 @@ import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
+import me.micrjonas.grandtheftdiamond.item.Kit;
 import me.micrjonas.grandtheftdiamond.listener.player.PlayerInteractListener;
 import me.micrjonas.grandtheftdiamond.manager.Manager;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
@@ -84,6 +85,7 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 	private final Firearms firearmsManager = new Firearms();
 	private final Map<String, PluginItem> items = new HashMap<>();
 	private final Map<String, PluginItem> customItems = new HashMap<>();
+	private final Map<String, Kit> kits = new HashMap<>();
 	
 	private ItemManager() {
 		GrandTheftDiamond.registerFileReloadListener(this);
@@ -124,6 +126,19 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 	@Override
 	public Collection<PluginItem> getAllObjects() {
 		return Collections.unmodifiableCollection(items.values());
+	}
+	
+	/**
+	 * Returns a {@link Kit} by name. Ignores case-sensitive
+	 * @param name The name of the {@link Kit}
+	 * @return The registered {@link Kit}. {@code null} if the {@link Kit} is not registered
+	 * @throws IllegalArgumentException Thrown if {@code name} is {@code null}
+	 */
+	public Kit getKit(String name) throws IllegalArgumentException {
+		if (name == null) {
+			throw new IllegalArgumentException("Name is not allowed to be null");
+		}
+		return kits.get(name.toLowerCase());
 	}
 	
 	/**
