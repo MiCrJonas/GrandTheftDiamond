@@ -1,5 +1,6 @@
 package me.micrjonas.grandtheftdiamond.item.pluginitem;
 
+import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -14,16 +15,19 @@ import java.util.Set;
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.Team;
+import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.item.Kit;
 import me.micrjonas.grandtheftdiamond.listener.player.PlayerInteractListener;
 import me.micrjonas.grandtheftdiamond.manager.Manager;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
+import me.micrjonas.grandtheftdiamond.util.Enums;
 import me.micrjonas.grandtheftdiamond.util.StringUtils;
 import me.micrjonas.grandtheftdiamond.util.bukkit.LeveledEnchantment;
 import me.micrjonas.grandtheftdiamond.util.bukkit.Materials;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -31,6 +35,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
 
@@ -110,6 +115,20 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 	}
 	
 	/**
+	 * Creates an {@link ItemStack} with optional item meta
+	 * @param type The type of the {@link ItemStack}
+	 * @param amount The amount of the {@link ItemStack}
+	 * @param name The display name of the {@link ItemStack}. May be {@code null}
+	 * @param lore The lore of the {@link ItemStack}. May be {@code null}
+	 * @return The new {@link ItemStack}
+	 * @throws IllegalArgumentException Thrown if {@code type} is {@code null} or {@code} is invalid
+	 * @see #createItem(Material, int, String, List, Collection)
+	 */
+	public static ItemStack createItem(Material type, int amount, String name, List<String> lore) {
+		return createItem(type, amount, name, lore, null);
+	}
+	
+	/**
 	 * Creates a new {@link ItemStack} with data of a {@link Map}
 	 * @param data The {@link ItemStack}'s data
 	 * @param useAmountFromMap Whether the amount stored in the {@link Map} should be use or 1
@@ -150,6 +169,97 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 			}
 		}
 		return createItem(type, amount, name, lore, enchantments);
+	}
+	
+	@SuppressWarnings("deprecation")
+	public static ItemStack getItemFromSection(ConfigurationSection section, boolean useAmountFromConfig) {
+		//Item
+		Set<LeveledEnchantment> enchantments = null; 
+		if (section.isList("enchantments")) {
+			enchantments = getEnchantments(section.getStringList("enchantments"));
+		}
+		Material type = Enums.valueOf(Material.class, section.getString("type"));
+		if (type == null) {
+			type = Enums.valueOf(Material.class, section.getString("item"));
+		}
+		if (type == null) {
+			try {
+				type = Material.getMaterial(section.getInt("item"));
+			}
+			catch (NumberFormatException ex) {
+				return null;
+			}
+		}
+		if (type == null) {
+			return null;
+		}
+		ItemStack item = null;
+		item = createItem(type,
+				useAmountFromConfig && section.getInt("amount") > 0 ? section.getInt("amount") : 1, 
+				section.getString("name"), 
+				section.getStringList("lore"),
+				enchantments);	
+		
+	//Recipe
+		if (section.isList("craftRecipe")) {
+			ShapedRecipe recipe = new ShapedRecipe(item);
+			List<String> configList = section.getStringList("craftRecipe");
+			String[] items = new String[configList.size()];
+			List<Entry<Character, Material>> ingredients = new ArrayList<>();
+			int longest = 0;
+			char slot = '0';
+			for (int i = 0; i < configList.size(); i++) {
+				String recipeLine = "";
+				String[] split = configList.get(i).split(" ");
+				for (int j = 0; j < split.length && j < 3; j++, slot++) {
+					Material required = Material.getMaterial(split[j].toUpperCase());
+					recipeLine = recipeLine + slot;
+					if (required != null && required != Material.AIR) {
+						ingredients.add(new SimpleEntry<>(slot, required));
+					}
+				}
+				if (longest < recipeLine.length()) {
+					longest = recipeLine.length();
+				}
+				items[i] = recipeLine;
+			}
+			
+			for (int i = 0; i < items.length; i++) {
+				while (items[i].length() < longest) {
+					items[i] = items[i] + "-";
+				}
+			}
+			recipe.shape(items);
+			for (Entry<Character, Material> entry : ingredients) {
+				recipe.setIngredient(entry.getKey(), entry.getValue());
+			}
+			Bukkit.addRecipe(recipe);
+		}
+		return item;
+	}
+	
+	/**
+	 * Loads an {@link ItemStack} from a {@link PluginFile}
+	 * @param file The file to load from
+	 * @param path The path to load from
+	 * @param useAmountFromConfig Whether the configured amount should be use or 1
+	 * @return The new {@link ItemStack}. May be {@code null} if some required data is missing
+	 * @throws IllegalArgumentException Thrown if {@code file} or {@code path} is {@code null} or if the path is not a
+	 * 	{@link ConfigurationSection}
+	 * @see #getItemFromSection(ConfigurationSection, boolean)
+	 */
+	public static ItemStack loadItemFromFile(PluginFile file, String path, boolean useAmountFromConfig) throws IllegalArgumentException {
+		if (file == null) {
+			throw new IllegalArgumentException("File is not allowed to be null");
+		}
+		if (path == null) {
+			throw new IllegalArgumentException("Path is not allowed to be null");
+		}
+		ConfigurationSection section = FileManager.getInstance().getFileConfiguration(file).getConfigurationSection(path);
+		if (section == null) {
+			throw new IllegalArgumentException("Invalid path. Path does not represent a ConfigurationSection");
+		}
+		return getItemFromSection(section, useAmountFromConfig);
 	}
 	
 	private static Map<String, ConfigurationSection> getEntries(FileConfiguration fileConfiguration, String path, String subPath) {
