@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.Team;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.item.Kit;
@@ -86,6 +87,8 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 	private final Map<String, PluginItem> items = new HashMap<>();
 	private final Map<String, PluginItem> customItems = new HashMap<>();
 	private final Map<String, Kit> kits = new HashMap<>();
+	@SuppressWarnings("unchecked")
+	private final Collection<Kit>[] startKits = new Collection[2];
 	
 	private ItemManager() {
 		GrandTheftDiamond.registerFileReloadListener(this);
@@ -139,6 +142,18 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 			throw new IllegalArgumentException("Name is not allowed to be null");
 		}
 		return kits.get(name.toLowerCase());
+	}
+	
+	/**
+	 * Returns a {@link Collection} of all start {@link Kit}s of a specific {@link Team}
+	 * @param team The {@link Team}
+	 * @return A {@link Collection} of all start {@link Kit}s of a specific {@link Team}. May be empty, but is never {@code null}
+	 * @throws IllegalArgumentException Thrown if {@code team} is not a real {@link Team}
+	 * @see Team#requiresRealTeam(Team)
+	 */
+	public Collection<Kit> getStartKits(Team team) throws IllegalArgumentException {
+		Team.requiresRealTeam(team);
+		return startKits[team.ordinal()];
 	}
 	
 	/**
