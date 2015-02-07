@@ -65,7 +65,7 @@ import me.micrjonas.grandtheftdiamond.data.storage.StorableManager;
 import me.micrjonas.grandtheftdiamond.data.storage.Storables;
 import me.micrjonas.grandtheftdiamond.gang.GangManager;
 import me.micrjonas.grandtheftdiamond.house.HouseManager;
-import me.micrjonas.grandtheftdiamond.item.ItemManager;
+import me.micrjonas.grandtheftdiamond.item.pluginitem.ItemManager;
 import me.micrjonas.grandtheftdiamond.item.pluginitem.Knife;
 import me.micrjonas.grandtheftdiamond.jail.JailManager;
 import me.micrjonas.grandtheftdiamond.listener.BlockBreakListener;
@@ -178,7 +178,6 @@ public class GrandTheftDiamondPlugin extends JavaPlugin {
 		GangManager.getInstance();
 		HouseManager.getInstance();
 		ItemManager.getInstance();
-		me.micrjonas.grandtheftdiamond.item.pluginitem.ItemManager.getInstance();
 		JailManager.getInstance();
 		LanguageManager.getInstance();
 		PluginData.getInstance();
