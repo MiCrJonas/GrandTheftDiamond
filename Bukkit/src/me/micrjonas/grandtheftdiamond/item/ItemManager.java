@@ -150,7 +150,7 @@ public class ItemManager {
 	
 	
 	@SuppressWarnings("unchecked")
-	private static ItemStack getItemFromMap(Map<String ,Object> item, boolean useAmountFromConfig) {
+	public static ItemStack getItemFromMap(Map<String ,Object> item, boolean useAmountFromConfig) {
 		
 		if (!item.containsKey("item"))
 			return null;
