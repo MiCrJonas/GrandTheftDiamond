@@ -1,19 +1,19 @@
 package me.micrjonas.grandtheftdiamond.item.pluginitem;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.listener.player.PlayerInteractListener;
+import me.micrjonas.grandtheftdiamond.manager.Manager;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
 
 import org.bukkit.configuration.ConfigurationSection;
@@ -26,7 +26,7 @@ import org.bukkit.inventory.ItemStack;
 /**
  * Manages the plugin's items
  */
-public class ItemManager implements FileReloadListener {
+public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 
 	private final static ItemManager instance = new ItemManager();
 	
@@ -202,13 +202,9 @@ public class ItemManager implements FileReloadListener {
 		return items.containsKey(name.toLowerCase());
 	}
 	
-	
-	/**
-	 * Returns a new {@link Set} with all items
-	 * @return A new {@link Set} as a copy of all registered items
-	 */
-	public Set<String> getAllItems() {
-		return new HashSet<>(items.keySet());
+	@Override
+	public Collection<PluginItem> getAllObjects() {
+		return Collections.unmodifiableCollection(items.values());
 	}
 	
 	/**
