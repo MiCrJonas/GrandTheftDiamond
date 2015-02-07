@@ -11,7 +11,7 @@ import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.data.storage.Storable;
 import me.micrjonas.grandtheftdiamond.inventory.merchant.Merchant;
 import me.micrjonas.grandtheftdiamond.inventory.merchant.Offer;
-import me.micrjonas.grandtheftdiamond.item.ItemManager;
+import me.micrjonas.grandtheftdiamond.item.pluginitem.ItemManager;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
 import me.micrjonas.grandtheftdiamond.messenger.NoPermissionType;
 import me.micrjonas.grandtheftdiamond.util.Nameable;
@@ -67,12 +67,12 @@ public abstract class Dealer implements Nameable, Storable {
 		
 		for (int i = 0; i < offers.size(); i++) {
 			
-			data.put("offers." + i + ".price0", ItemManager.toMap(offers.get(i).getPrice0()));
+			data.put("offers." + i + ".price0", ItemManager.itemToMap(offers.get(i).getPrice0()));
 			
 			if (offers.get(i).getPrice1() != null)
-				data.put("offers." + i + ".price1", ItemManager.toMap(offers.get(i).getPrice1()));
+				data.put("offers." + i + ".price1", ItemManager.itemToMap(offers.get(i).getPrice1()));
 			
-			data.put("offers." + i + ".result", ItemManager.toMap(offers.get(i).getResult()));
+			data.put("offers." + i + ".result", ItemManager.itemToMap(offers.get(i).getResult()));
 			
 		}
 		
