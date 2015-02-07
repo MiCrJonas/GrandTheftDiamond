@@ -1,6 +1,5 @@
 package me.micrjonas.grandtheftdiamond.item.pluginitem;
 
-import me.micrjonas.grandtheftdiamond.item.ItemManager;
 import me.micrjonas.grandtheftdiamond.util.Immutable;
 
 import org.bukkit.configuration.ConfigurationSection;
