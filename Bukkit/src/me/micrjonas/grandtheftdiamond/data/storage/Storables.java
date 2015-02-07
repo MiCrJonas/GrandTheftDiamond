@@ -26,7 +26,7 @@ public class Storables {
 	 */
 	public static <T extends Storable> void saveRegisteredObjects(StorableManager<T> manager, FileConfiguration file, String path) {
 		for (T obj : manager.getAllObjects()) {
-			String finalPath = path == null || path.isEmpty() ? "" : path + "." + obj.getName();
+			String finalPath = path == null || path.isEmpty() ? obj.getName() : path + "." + obj.getName();
 			file.set(finalPath, obj.getStoreData());
 		}
 	}
