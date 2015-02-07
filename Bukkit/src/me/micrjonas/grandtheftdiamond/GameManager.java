@@ -9,8 +9,8 @@ import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginData;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.data.TemporaryPluginData;
-import me.micrjonas.grandtheftdiamond.item.ItemManager;
 import me.micrjonas.grandtheftdiamond.item.Kit;
+import me.micrjonas.grandtheftdiamond.item.pluginitem.ItemManager;
 import me.micrjonas.grandtheftdiamond.manager.ChatManager;
 import me.micrjonas.grandtheftdiamond.manager.NametagManager;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
@@ -158,7 +158,7 @@ public class GameManager implements FileReloadListener {
 							
 							if (playerData.get("inventory") == null) {
 								
-								for (Kit kit : ItemManager.getInstance().getStartKits(team, p))
+								for (Kit kit : ItemManager.getInstance().getPlayerStartKits(team, p))
 									kit.giveToPlayer(p);
 								
 							}
