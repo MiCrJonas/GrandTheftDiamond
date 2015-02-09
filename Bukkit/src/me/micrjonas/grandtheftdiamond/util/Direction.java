@@ -2,7 +2,11 @@ package me.micrjonas.grandtheftdiamond.util;
 
 
 /**
- * Represents a direction with rotation and pitch value. Each object is immutable
+ * Represents a direction with rotation and pitch value in degrees.<br>
+ * 	The pitch value goes from -90 degrees to 90 degrees (-90 degrees is downward, 90 degrees is upward).
+ * 	The to rotation value goes from -180 degrees to 180 degrees (Minecraft default). The values will be converted
+ * 	to this format when the constructor.<br>
+ * 	Each object is immutable
  */
 public class Direction implements Immutable {
 	
@@ -15,12 +19,25 @@ public class Direction implements Immutable {
 	
 	/**
 	 * Creates a new object with a rotation and a pitch value
-	 * @param rotation The rotation value
-	 * @param pitch The pitch value
+	 * @param rotation The rotation value. The value will be converted to the -180 to 180 degrees format
+	 * @param pitch The pitch value. The value will be converted to the -90 to 90 degrees format. 100 degrees will be converted to
+	 * 	80 degrees. 190 degrees will be converted to -10 degrees
 	 */
 	public Direction(float rotation, float pitch) {
+		if (rotation > 180) {
+			rotation -= 360;
+			while (rotation > 180) {
+				rotation -= 360;
+			}
+		}
+		else if (rotation < 180) {
+			rotation += 360;
+			while (rotation < 180) {
+				rotation += 360;
+			}
+		}
 		this.rotation = rotation;
-		this.pitch = pitch;
+		this.pitch = (float) Math.toDegrees(Math.asin(Math.sin(Math.toRadians(pitch)))); // Makes 100° to 80° and 460° to 80°
 	}
 
 	/**
