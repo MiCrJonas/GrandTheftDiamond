@@ -7,7 +7,7 @@ package me.micrjonas.grandtheftdiamond.util;
 public class Direction implements Immutable {
 	
 	/**
-	 * {@code Direction} with value 0 for rotation and pitch
+	 * {@code Direction} with value 0 for rotation and pitch. (South)
 	 */
 	public final static Direction NULL_DIRECTION = new Direction(0, 0);
 	
