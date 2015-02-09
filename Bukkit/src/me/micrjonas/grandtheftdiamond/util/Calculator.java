@@ -39,13 +39,5 @@ public class Calculator {
 		return exceptionReturn;
 	}
 	
-	public int calculate(CalculateConstant constant, int value0, int value1) {
-		return constant.calculate(value0, value1);
-	}
-	
-	public double calculate(CalculateConstant constant, double value0, double value1) {
-		return constant.calculate(value0, value1);
-	}
-	
 }
 
