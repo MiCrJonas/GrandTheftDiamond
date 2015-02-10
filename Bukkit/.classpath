@@ -12,5 +12,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/JONAS/Desktop 2/Eclipse/libraries/Vault.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MinecraftWrapper"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
