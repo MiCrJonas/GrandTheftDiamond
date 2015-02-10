@@ -27,7 +27,7 @@ import org.bukkit.potion.PotionEffectType;
 
 public class ConfigInizializer {
 
-	ConfigInizializer() {
+	public ConfigInizializer() {
 		createReadmes();
 		addDefaultMessages();
 		addDefaultConfigPaths();
