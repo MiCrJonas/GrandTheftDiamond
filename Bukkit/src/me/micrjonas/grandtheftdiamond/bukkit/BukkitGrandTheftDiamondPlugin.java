@@ -1,4 +1,4 @@
-package me.micrjonas.grandtheftdiamond;
+package me.micrjonas.grandtheftdiamond.bukkit;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -21,6 +21,10 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import me.micrjonas.grandtheftdiamond.ConfigInizializer;
+import me.micrjonas.grandtheftdiamond.GameManager;
+import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
+import me.micrjonas.grandtheftdiamond.Team;
 import me.micrjonas.grandtheftdiamond.api.ListenerLoader;
 import me.micrjonas.grandtheftdiamond.api.event.cause.LeaveReason;
 import me.micrjonas.grandtheftdiamond.chat.ChatManager;
