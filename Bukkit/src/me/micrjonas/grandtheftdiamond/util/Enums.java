@@ -6,6 +6,9 @@ import java.util.List;
 
 import org.bukkit.configuration.ConfigurationSection;
 
+/**
+ * Contains some utilities for {@link Enum}s
+ */
 public class Enums {
 	
 	private Enums() { /*private constructor*/ }
