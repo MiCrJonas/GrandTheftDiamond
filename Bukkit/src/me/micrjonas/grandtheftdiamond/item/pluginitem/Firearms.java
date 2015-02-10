@@ -3,7 +3,7 @@ package me.micrjonas.grandtheftdiamond.item.pluginitem;
 import java.util.HashMap;
 import java.util.Map;
 
-import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.data.TemporaryPluginData;

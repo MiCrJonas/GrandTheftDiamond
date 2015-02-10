@@ -11,7 +11,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
  
 public class ConfigManager {
  

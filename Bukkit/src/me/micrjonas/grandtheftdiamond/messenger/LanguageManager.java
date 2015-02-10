@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 

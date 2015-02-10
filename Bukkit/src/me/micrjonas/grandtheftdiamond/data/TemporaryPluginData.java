@@ -13,7 +13,7 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

@@ -3,7 +3,7 @@ package me.micrjonas.grandtheftdiamond.onlygtdmode;
 import java.util.List;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

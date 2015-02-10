@@ -3,7 +3,7 @@ package me.micrjonas.grandtheftdiamond.listener.player;
 import java.util.concurrent.TimeUnit;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.manager.NametagManager;

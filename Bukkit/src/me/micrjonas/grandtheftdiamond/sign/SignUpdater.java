@@ -4,8 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.Team;
+import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginData;

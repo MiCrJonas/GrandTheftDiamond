@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 import me.micrjonas.grandtheftdiamond.arena.ArenaManager;
+import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.command.CommandExecutor;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;

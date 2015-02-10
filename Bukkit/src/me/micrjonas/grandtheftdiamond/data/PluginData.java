@@ -8,12 +8,12 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.Team;
 import me.micrjonas.grandtheftdiamond.api.event.AbstractCancellableEvent;
 import me.micrjonas.grandtheftdiamond.api.event.cause.WantedLevelChangeCause;
 import me.micrjonas.grandtheftdiamond.api.event.player.PlayerWantedLevelChangeEvent;
 import me.micrjonas.grandtheftdiamond.arena.ArenaType;
+import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.player.PlayerData;
 import me.micrjonas.grandtheftdiamond.util.Enums;
 import me.micrjonas.grandtheftdiamond.util.bukkit.Locations;

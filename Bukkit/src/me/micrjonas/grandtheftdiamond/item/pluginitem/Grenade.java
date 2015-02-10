@@ -3,9 +3,9 @@ package me.micrjonas.grandtheftdiamond.item.pluginitem;
 import java.util.HashMap;
 import java.util.Map;
 
-import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.api.event.GrenadeExplodeEvent;
 import me.micrjonas.grandtheftdiamond.api.event.player.PlayerUseItemEvent;
+import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.PluginData;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;

@@ -1,6 +1,6 @@
 package me.micrjonas.grandtheftdiamond.dealer.listener;
 
-import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.dealer.Dealer;
 import me.micrjonas.grandtheftdiamond.dealer.DealerManager;
 import net.citizensnpcs.api.event.NPCDespawnEvent;

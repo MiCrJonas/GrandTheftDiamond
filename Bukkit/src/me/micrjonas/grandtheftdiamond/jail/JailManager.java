@@ -11,13 +11,13 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.Team;
 import me.micrjonas.grandtheftdiamond.api.event.cause.JailReason;
 import me.micrjonas.grandtheftdiamond.api.event.player.PlayerJailEvent;
 import me.micrjonas.grandtheftdiamond.api.event.player.PlayerJoinGameEvent;
 import me.micrjonas.grandtheftdiamond.api.event.player.PlayerLeaveGameEvent;
 import me.micrjonas.grandtheftdiamond.api.event.player.PlayerReleaseFromJailEvent;
+import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginData;

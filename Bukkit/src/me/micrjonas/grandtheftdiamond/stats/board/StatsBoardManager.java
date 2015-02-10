@@ -6,8 +6,8 @@ import java.util.Map;
 import java.util.UUID;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.api.event.player.PlayerStatsChangeEvent;
+import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.data.TemporaryPluginData;

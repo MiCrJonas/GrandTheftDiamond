@@ -16,7 +16,7 @@ import java.util.UUID;
 import java.util.logging.Level;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.storage.Storable;
 import me.micrjonas.grandtheftdiamond.updater.DataConverter;
 import net.minecraft.util.com.google.common.io.Files;
