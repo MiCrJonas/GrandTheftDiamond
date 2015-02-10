@@ -51,25 +51,33 @@ public class Position implements Immutable {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		Position other = (Position) obj;
 		if (world == null) {
-			if (other.world != null)
+			if (other.world != null) {
 				return false;
+			}
 		}
-		else if (!world.equals(other.world))
+		else if (!world.equals(other.world)) {
 			return false;
-		if (Double.doubleToLongBits(x) != Double.doubleToLongBits(other.x))
+		}
+		if (Double.doubleToLongBits(x) != Double.doubleToLongBits(other.x)) {
 			return false;
-		if (Double.doubleToLongBits(y) != Double.doubleToLongBits(other.y))
+		}
+		if (Double.doubleToLongBits(y) != Double.doubleToLongBits(other.y)) {
 			return false;
-		if (Double.doubleToLongBits(z) != Double.doubleToLongBits(other.z))
+		}
+		if (Double.doubleToLongBits(z) != Double.doubleToLongBits(other.z)) {
 			return false;
+		}
 		return true;
 	}
 
