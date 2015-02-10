@@ -8,7 +8,7 @@ public interface Wrapper {
 	
 	/**
 	 * Returns the server-used object handle
-	 * @return The server-used handle
+	 * @return The server-used handle. Not allowed to be {@code null}
 	 */
 	Object getHandle();
 	
