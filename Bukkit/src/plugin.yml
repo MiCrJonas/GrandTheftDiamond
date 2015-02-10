@@ -1,5 +1,5 @@
 name: GrandTheftDiamond
-main: me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin
+main: me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin
 version: Beta_1.11.8
 author: MiCrJonas1997
 description: The GTA plugin for Minecraft!
