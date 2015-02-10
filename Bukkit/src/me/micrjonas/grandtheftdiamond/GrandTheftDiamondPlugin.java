@@ -33,8 +33,8 @@ public interface GrandTheftDiamondPlugin {
 	Logger getLogger();
 	
 	/**
-	 * Returns the version of the plugin
-	 * @return The version of the plugin
+	 * Returns the {@link Version} of the plugin
+	 * @return The {@link Version} of the plugin
 	 */
 	Version getVersion();
 	
