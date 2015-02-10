@@ -3,7 +3,7 @@ package me.micrjonas.grandtheftdiamond.onlygtdmode;
 import java.util.List;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -18,7 +18,7 @@ class CommandListener implements Listener {
 	
 	CommandListener(OnlyGTDModeManager manager) {
 		this.manager = manager;
-		Bukkit.getPluginManager().registerEvents(this, GrandTheftDiamondPlugin.getInstance());
+		Bukkit.getPluginManager().registerEvents(this, BukkitGrandTheftDiamondPlugin.getInstance());
 	}	
 	
 	@EventHandler (priority = EventPriority.HIGHEST, ignoreCancelled = false)
@@ -29,7 +29,7 @@ class CommandListener implements Listener {
 			List<String> commandBlackList = manager.getConfig().getStringList("commands.commandsWithoutPrefixBlacklist");
 			if (!commandBlackList.contains(args[0])) {
 				e.setCancelled(true);
-				GrandTheftDiamondPlugin.getInstance().onCommand(p, GrandTheftDiamondPlugin.getInstance().getCommand("gtd"), null, args);
+				BukkitGrandTheftDiamondPlugin.getInstance().onCommand(p, BukkitGrandTheftDiamondPlugin.getInstance().getCommand("gtd"), null, args);
 			}
 		}
 	}

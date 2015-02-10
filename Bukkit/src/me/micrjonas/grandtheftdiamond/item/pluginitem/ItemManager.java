@@ -14,7 +14,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.Team;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
@@ -517,7 +517,7 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 			throw new IllegalArgumentException("Item to interact is not allowed to be null");
 		}
 		interactItem = interactItem.clone();
-		GrandTheftDiamondPlugin.getInstance().getRegisteredListener(PlayerInteractListener.class)
+		BukkitGrandTheftDiamondPlugin.getInstance().getRegisteredListener(PlayerInteractListener.class)
 				.regiserItem(item, interactItem);
 	}
 	
@@ -532,7 +532,7 @@ public class ItemManager implements FileReloadListener, Manager<PluginItem> {
 		}
 		PluginItem item = items.remove(name.toLowerCase());
 		if (item instanceof InteractablePluginItem) {
-			GrandTheftDiamondPlugin.getInstance().getRegisteredListener(PlayerInteractListener.class)
+			BukkitGrandTheftDiamondPlugin.getInstance().getRegisteredListener(PlayerInteractListener.class)
 					.unregisterItem((InteractablePluginItem) item);
 		}
 	}

@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.api.event.player.PlayerStatsChangeEvent;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
@@ -36,7 +36,7 @@ public class StatsBoardManager implements FileReloadListener, Listener {
 	private final Map<UUID, PlayerStatsBoard> statsBoards = new HashMap<>();
 	
 	private StatsBoardManager() {
-		Bukkit.getPluginManager().registerEvents(this, GrandTheftDiamondPlugin.getInstance());
+		Bukkit.getPluginManager().registerEvents(this, BukkitGrandTheftDiamondPlugin.getInstance());
 		GrandTheftDiamond.registerFileReloadListener(this);
 	}
 	

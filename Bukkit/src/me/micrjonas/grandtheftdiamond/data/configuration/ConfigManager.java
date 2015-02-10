@@ -11,7 +11,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
  
 public class ConfigManager {
  
@@ -102,7 +102,7 @@ public class ConfigManager {
             file.createNewFile();
  
             if(resource != null && !resource.isEmpty()) {
-                this.copyResource(GrandTheftDiamondPlugin.getInstance().getResource(resource), file);
+                this.copyResource(BukkitGrandTheftDiamondPlugin.getInstance().getResource(resource), file);
             }
  
         } catch (IOException e) {

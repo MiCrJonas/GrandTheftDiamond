@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
@@ -31,7 +31,7 @@ public class Knife implements FileReloadListener, Listener {
 	 */
 	public Knife() {
 		GrandTheftDiamond.registerFileReloadListener(this);
-		Bukkit.getPluginManager().registerEvents(this, GrandTheftDiamondPlugin.getInstance());
+		Bukkit.getPluginManager().registerEvents(this, BukkitGrandTheftDiamondPlugin.getInstance());
 	}
 	
 	@Override

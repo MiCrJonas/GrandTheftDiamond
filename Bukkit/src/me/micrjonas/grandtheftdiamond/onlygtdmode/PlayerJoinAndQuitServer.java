@@ -1,7 +1,7 @@
 package me.micrjonas.grandtheftdiamond.onlygtdmode;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -19,7 +19,7 @@ public class PlayerJoinAndQuitServer implements Listener {
 		
 		this.manager = manager;
 	
-		Bukkit.getPluginManager().registerEvents(this, GrandTheftDiamondPlugin.getInstance());
+		Bukkit.getPluginManager().registerEvents(this, BukkitGrandTheftDiamondPlugin.getInstance());
 		
 	}
 	

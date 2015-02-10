@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.Team;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
@@ -163,7 +163,7 @@ public class SignUpdater implements FileReloadListener {
 				}
 			}
 		};
-		if (GrandTheftDiamondPlugin.getInstance().isEnabled()) {
+		if (BukkitGrandTheftDiamondPlugin.getInstance().isEnabled()) {
 			GrandTheftDiamond.runTask(toRun);
 		}
 		else {

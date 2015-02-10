@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.Team;
 import me.micrjonas.grandtheftdiamond.api.event.cause.JailReason;
 import me.micrjonas.grandtheftdiamond.api.event.player.PlayerJailEvent;
@@ -57,10 +57,10 @@ public class JailManager implements Listener, FileReloadListener, StorableManage
 	private int jailTimeCopKilledCivilian;
 	
 	private JailManager() {
-		Bukkit.getPluginManager().registerEvents(this, GrandTheftDiamondPlugin.getInstance());
+		Bukkit.getPluginManager().registerEvents(this, BukkitGrandTheftDiamondPlugin.getInstance());
 		GrandTheftDiamond.registerFileReloadListener(this);
 		GrandTheftDiamond.registerStorableManager(this, PluginFile.JAILS);
-		Bukkit.getPluginManager().registerEvents(new JailListener(this), GrandTheftDiamondPlugin.getInstance());
+		Bukkit.getPluginManager().registerEvents(new JailListener(this), BukkitGrandTheftDiamondPlugin.getInstance());
 	}
 	
 	@Override
@@ -121,7 +121,7 @@ public class JailManager implements Listener, FileReloadListener, StorableManage
 					playerData.set("jailInformation", null);
 					return;
 				}
-				GrandTheftDiamondPlugin.getInstance().getRegisteredListener(PlayerTeleportListener.class).ignorePlayerOnNextTeleport(e.getPlayer());
+				BukkitGrandTheftDiamondPlugin.getInstance().getRegisteredListener(PlayerTeleportListener.class).ignorePlayerOnNextTeleport(e.getPlayer());
 				e.setJoinLocation(jail.getRandomCell());
 				Messenger.getInstance().sendPluginMessage(e.getPlayer(), "jailedOnJoin", "%time%", String.valueOf(jailTimeLeft));
 				jailTimeScheduler.put(e.getPlayer(), GrandTheftDiamond.scheduleSyncDelayedTask(new Runnable() {
@@ -234,7 +234,7 @@ public class JailManager implements Listener, FileReloadListener, StorableManage
 			}
 		}, time, TimeUnit.SECONDS));
 		
-		GrandTheftDiamondPlugin.getInstance().getRegisteredListener(PlayerTeleportListener.class).ignorePlayerOnNextTeleport(p);
+		BukkitGrandTheftDiamondPlugin.getInstance().getRegisteredListener(PlayerTeleportListener.class).ignorePlayerOnNextTeleport(p);
 		p.teleport(jail.getRandomCell());
 		if (!(reason == JailReason.COP_KILLED_CIVILIAN || reason == JailReason.COMMAND)) {
 			Messenger.getInstance().sendPluginMessage(p, "arrested", new Player[]{cop}, new String[]{"%time%", "%amount%"}, new String[]{String.valueOf(time), String.valueOf(moneyForJailedPlayer * -1)});
@@ -302,7 +302,7 @@ public class JailManager implements Listener, FileReloadListener, StorableManage
 		}
 		Bukkit.getPluginManager().callEvent(new PlayerReleaseFromJailEvent(p, jail, FileManager.getInstance().getPlayerData(p).getInt("jailInformation.lastJailedTime")));
 		FileManager.getInstance().getPlayerData(p).set("jailInformation", null);
-		GrandTheftDiamondPlugin.getInstance().getRegisteredListener(PlayerTeleportListener.class).ignorePlayerOnNextTeleport(p);
+		BukkitGrandTheftDiamondPlugin.getInstance().getRegisteredListener(PlayerTeleportListener.class).ignorePlayerOnNextTeleport(p);
 		p.teleport(jail.getSpawn());
 		Messenger.getInstance().sendPluginMessage(p, "releasedFromJail");
 		return true;

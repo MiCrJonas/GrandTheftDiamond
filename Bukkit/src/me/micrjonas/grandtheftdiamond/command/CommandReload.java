@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.List;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
@@ -53,8 +53,8 @@ public class CommandReload implements CommandExecutor, TabCompleter {
 				
 				else if(args[1].equalsIgnoreCase("plugin")) {
 				
-					Bukkit.getPluginManager().disablePlugin(Bukkit.getPluginManager().getPlugin(GrandTheftDiamondPlugin.getInstance().getDescription().getName()));
-					Bukkit.getPluginManager().enablePlugin(Bukkit.getPluginManager().getPlugin(GrandTheftDiamondPlugin.getInstance().getDescription().getName()));
+					Bukkit.getPluginManager().disablePlugin(Bukkit.getPluginManager().getPlugin(BukkitGrandTheftDiamondPlugin.getInstance().getDescription().getName()));
+					Bukkit.getPluginManager().enablePlugin(Bukkit.getPluginManager().getPlugin(BukkitGrandTheftDiamondPlugin.getInstance().getDescription().getName()));
 				
 					Messenger.getInstance().sendPluginMessage(sender, "pluginReloaded");
 					

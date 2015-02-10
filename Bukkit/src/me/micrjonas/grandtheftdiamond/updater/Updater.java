@@ -16,7 +16,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -44,7 +44,7 @@ import org.json.simple.JSONValue;
 
 public class Updater {
 	
-	private final GrandTheftDiamondPlugin plugin = GrandTheftDiamondPlugin.getInstance();
+	private final BukkitGrandTheftDiamondPlugin plugin = BukkitGrandTheftDiamondPlugin.getInstance();
 	
 	private static Updater updater = null;
 	
@@ -412,7 +412,7 @@ public class Updater {
 	 */
 	private boolean versionCheck(String title) {
 		if (this.type != UpdateType.DOWNLOAD_NO_VERSION_CHECK) {
-			final String localVersion = GrandTheftDiamondPlugin.getInstance().getDescription().getVersion();
+			final String localVersion = BukkitGrandTheftDiamondPlugin.getInstance().getDescription().getVersion();
 			String[] titleSplit = title.split(delimiter);
 			if (titleSplit.length == 2) {
 				
@@ -426,7 +426,7 @@ public class Updater {
 
 			} else {
 				// The file's name did not contain the string 'vVersion'
-				final String authorInfo = GrandTheftDiamondPlugin.getInstance().getDescription().getAuthors().size() == 0 ? "" : " (" + GrandTheftDiamondPlugin.getInstance().getDescription().getAuthors().get(0) + ")";
+				final String authorInfo = BukkitGrandTheftDiamondPlugin.getInstance().getDescription().getAuthors().size() == 0 ? "" : " (" + BukkitGrandTheftDiamondPlugin.getInstance().getDescription().getAuthors().get(0) + ")";
 				plugin.getLogger().warning("The author of this plugin " + authorInfo + " has misconfigured their Auto Update system");
 				plugin.getLogger().warning("File versions should follow the format 'PluginName vVERSION'");
 				plugin.getLogger().warning("Please notify the author of this error.");

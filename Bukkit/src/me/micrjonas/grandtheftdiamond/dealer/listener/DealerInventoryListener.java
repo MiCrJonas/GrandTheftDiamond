@@ -3,7 +3,7 @@ package me.micrjonas.grandtheftdiamond.dealer.listener;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.dealer.Dealer;
 import me.micrjonas.grandtheftdiamond.dealer.DealerManager;
 import me.micrjonas.grandtheftdiamond.inventory.merchant.Offer;
@@ -19,7 +19,7 @@ public class DealerInventoryListener implements Listener {
 	
 	public DealerInventoryListener() {
 		
-		Bukkit.getPluginManager().registerEvents(this, GrandTheftDiamondPlugin.getInstance());
+		Bukkit.getPluginManager().registerEvents(this, BukkitGrandTheftDiamondPlugin.getInstance());
 		
 	}
 	

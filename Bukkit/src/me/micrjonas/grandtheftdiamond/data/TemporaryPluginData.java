@@ -13,7 +13,7 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -81,8 +81,8 @@ public class TemporaryPluginData implements Listener {
 	
 	private TemporaryPluginData() {
 		
-		if (GrandTheftDiamondPlugin.getInstance().isEnabled())
-			Bukkit.getPluginManager().registerEvents(this, GrandTheftDiamondPlugin.getInstance());
+		if (BukkitGrandTheftDiamondPlugin.getInstance().isEnabled())
+			Bukkit.getPluginManager().registerEvents(this, BukkitGrandTheftDiamondPlugin.getInstance());
 		
 	}
 	
@@ -141,7 +141,7 @@ public class TemporaryPluginData implements Listener {
 	@SuppressWarnings("deprecation")
 	private void clearCache(UUID playerId) {
 		
-		GrandTheftDiamondPlugin.getInstance().clearPlayerData(playerId);
+		BukkitGrandTheftDiamondPlugin.getInstance().clearPlayerData(playerId);
 		
 		targetPlayer.remove(playerId);
 		createPos1.remove(playerId);

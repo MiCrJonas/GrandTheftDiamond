@@ -52,10 +52,10 @@ public final class GrandTheftDiamond {
 	 * Returns the loaded plugin instance
 	 * @return The loaded plugin instance
 	 * @throws IllegalStateException Thrown if the plugin is not loaded by the bukkit's plugin manager
-	 * @see GrandTheftDiamondPlugin#getInstance()
+	 * @see BukkitGrandTheftDiamondPlugin#getInstance()
 	 */
-	public static GrandTheftDiamondPlugin getPlugin() throws IllegalStateException {
-		return GrandTheftDiamondPlugin.getInstance();
+	public static BukkitGrandTheftDiamondPlugin getPlugin() throws IllegalStateException {
+		return BukkitGrandTheftDiamondPlugin.getInstance();
 	}
 	
 	/**
@@ -118,49 +118,49 @@ public final class GrandTheftDiamond {
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#getDataFolder()}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#getDataFolder()}
 	 */
 	public static File getDataFolder() {
 		return getPlugin().getDataFolder();
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#registerFileReloadListener(FileReloadListener)}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#registerFileReloadListener(FileReloadListener)}
 	 */
 	public static boolean registerFileReloadListener(FileReloadListener l) throws IllegalArgumentException {
 		return getPlugin().registerFileReloadListener(l);
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#unregisterFileReloadListener(FileReloadListener)}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#unregisterFileReloadListener(FileReloadListener)}
 	 */
 	public static boolean unregisterFileReloadListener(FileReloadListener l) throws IllegalArgumentException {
 		return getPlugin().unregisterFileReloadListener(l);
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#reloadFileReloadListeners(PluginFile)}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#reloadFileReloadListeners(PluginFile)}
 	 */
 	public static void reloadFileReloadListeners(PluginFile file) {
 		getPlugin().reloadFileReloadListeners(file);
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#registerPlayerDataUser(PlayerDataUser)}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#registerPlayerDataUser(PlayerDataUser)}
 	 */
 	public static void registerPlayerDataUser(PlayerDataUser user) {
 		getPlugin().registerPlayerDataUser(user);
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#registerStorableManager(StorableManager, PluginFile)}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#registerStorableManager(StorableManager, PluginFile)}
 	 */
 	public static <T extends Storable> void registerStorableManager(StorableManager<? extends Storable> manager, PluginFile file) {
 		getPlugin().registerStorableManager(manager, file);
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#unregisterStorableManager(PluginFile)}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#unregisterStorableManager(PluginFile)}
 	 */
 	public static void unregisterStorableManager(PluginFile file) {
 		getPlugin().unregisterStorableManager(file);
@@ -311,56 +311,56 @@ public final class GrandTheftDiamond {
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#getChangeLog()}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#getChangeLog()}
 	 */
 	public static ChangeLog getChangeLog() {
 		return getPlugin().getChangeLog();
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#registerCommand(CommandExecutor, String, String...)}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#registerCommand(CommandExecutor, String, String...)}
 	 */
 	public static void registerCommand(CommandExecutor executor, String name, String... optionalAliases) throws IllegalArgumentException {
 		getPlugin().registerCommand(executor, name, optionalAliases);
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#getCommandExecutor(String)}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#getCommandExecutor(String)}
 	 */
 	public static CommandExecutor getCommandExecutor(String name) throws IllegalArgumentException {
 		return getPlugin().getCommandExecutor(name);
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#getRegisteredCommands()}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#getRegisteredCommands()}
 	 */
 	public static Set<String> getRegisteredCommands() {
 		return getPlugin().getRegisteredCommands();
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#isCommandRegistered(String)}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#isCommandRegistered(String)}
 	 */
 	public static boolean isCommendRegistered(String name) throws IllegalArgumentException {
 		return getPlugin().isCommandRegistered(name);
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#checkPermission(CommandSender, String)}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#checkPermission(CommandSender, String)}
 	 */
 	public static boolean checkPermission(CommandSender sender, String perm) {
 		return getPlugin().checkPermission(sender, perm);
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#checkPermission(CommandSender, String, boolean, NoPermissionType)}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#checkPermission(CommandSender, String, boolean, NoPermissionType)}
 	 */
 	public static boolean checkPermission(CommandSender sender, String perm, boolean sendNoPermissionMessage, NoPermissionType type) {
 		return getPlugin().checkPermission(sender, perm, sendNoPermissionMessage, type);
 	}
 	
 	/**
-	 * Equivalent to {@link GrandTheftDiamondPlugin#registerListener(Listener)}
+	 * Equivalent to {@link BukkitGrandTheftDiamondPlugin#registerListener(Listener)}
 	 */
 	public static void registerListener(Listener l) {
 		getPlugin().registerListener(l);
@@ -368,7 +368,7 @@ public final class GrandTheftDiamond {
 
 //SCHEDULER
 	public static void runTask(Runnable task) {
-		Bukkit.getScheduler().runTask(GrandTheftDiamondPlugin.getInstance(), task);
+		Bukkit.getScheduler().runTask(BukkitGrandTheftDiamondPlugin.getInstance(), task);
 	}
 	
 	public static void runTaskAsynchronously(Runnable task) {

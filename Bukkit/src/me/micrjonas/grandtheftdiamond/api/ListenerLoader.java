@@ -11,7 +11,7 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 
 import org.bukkit.Bukkit;
@@ -116,7 +116,7 @@ public class ListenerLoader extends URLClassLoader {
 		if (obj instanceof Listener) {
 			Listener l = (Listener) obj;
 			try {
-				Bukkit.getPluginManager().registerEvents(l, GrandTheftDiamondPlugin.getInstance());
+				Bukkit.getPluginManager().registerEvents(l, BukkitGrandTheftDiamondPlugin.getInstance());
 				GrandTheftDiamond.getLogger().info("Listener '" + l.getClass().getName() + "' loaded");
 			}
 			catch (Exception e) {

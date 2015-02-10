@@ -3,7 +3,7 @@ package me.micrjonas.grandtheftdiamond.item.pluginitem;
 import java.util.HashMap;
 import java.util.Map;
 
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.api.event.GrenadeExplodeEvent;
 import me.micrjonas.grandtheftdiamond.api.event.player.PlayerUseItemEvent;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
@@ -50,7 +50,7 @@ public class Grenade extends ItemStackPluginItem implements Listener, PluginItem
 		explosionRadius = configSection.getDouble("explosionRadius");
 		setFire = configSection.getBoolean("setFire");
 		breakBlocks = configSection.getBoolean("breakBlocks");	
-		Bukkit.getPluginManager().registerEvents(this, GrandTheftDiamondPlugin.getInstance());
+		Bukkit.getPluginManager().registerEvents(this, BukkitGrandTheftDiamondPlugin.getInstance());
 	}
 	
 	@Override

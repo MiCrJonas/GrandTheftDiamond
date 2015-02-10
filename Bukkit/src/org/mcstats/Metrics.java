@@ -48,7 +48,7 @@ import java.util.logging.Level;
 import java.util.zip.GZIPOutputStream;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -209,7 +209,7 @@ public class Metrics {
             }
 
             // Begin hitting the server with glorious data
-            task = plugin.getServer().getScheduler().runTaskTimerAsynchronously(GrandTheftDiamondPlugin.getInstance(), new Runnable() {
+            task = plugin.getServer().getScheduler().runTaskTimerAsynchronously(BukkitGrandTheftDiamondPlugin.getInstance(), new Runnable() {
 
                 private boolean firstPost = true;
 
@@ -339,7 +339,7 @@ public class Metrics {
      */
     private void postPlugin(final boolean isPing) throws IOException {
         // Server software specific section
-        PluginDescriptionFile description = GrandTheftDiamondPlugin.getInstance().getDescription();
+        PluginDescriptionFile description = BukkitGrandTheftDiamondPlugin.getInstance().getDescription();
         String pluginName = description.getName();
         boolean onlineMode = Bukkit.getServer().getOnlineMode(); // TRUE if online mode is enabled
         String pluginVersion = description.getVersion().toLowerCase().contains(" -") ? 

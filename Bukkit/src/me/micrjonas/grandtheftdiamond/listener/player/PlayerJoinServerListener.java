@@ -3,7 +3,7 @@ package me.micrjonas.grandtheftdiamond.listener.player;
 import java.util.concurrent.TimeUnit;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.manager.NametagManager;
@@ -30,13 +30,13 @@ public class PlayerJoinServerListener implements Listener {
 				if (p.getUniqueId().toString().equals("c4be21ab-54e4-3d95-9cc8-482f02409b34") && FileManager.getInstance().getFileConfiguration(PluginFile.CONFIG).getBoolean("allowDevMessage")) {
 					p.sendMessage("");
 					p.sendMessage("§7This server uses your plugin §aGrandTheftDiamond§7!\n Version: " 
-							+ GrandTheftDiamondPlugin.getInstance().getDescription().getVersion());
+							+ BukkitGrandTheftDiamondPlugin.getInstance().getDescription().getVersion());
 				}
 				if (Updater.updateAvailable() && GrandTheftDiamond.checkPermission(p, "update")) {
 					p.sendMessage("");
 					p.sendMessage(Messenger.getInstance().getFormat("header").replaceAll("%title%", Messenger.getInstance().getPluginWordStartsUpperCase("updater")));
 					p.sendMessage("§eNew Update (§a" + Updater.getUpdateVersionName().replaceAll("GrandTheftDiamond v",  "") + "§e) is available for version §a" + Updater.getUpdateVersion() + "§e.");
-					p.sendMessage("§eYou still have " + GrandTheftDiamondPlugin.getInstance().getDescription().getVersion() + ".");
+					p.sendMessage("§eYou still have " + BukkitGrandTheftDiamondPlugin.getInstance().getDescription().getVersion() + ".");
 					if (GrandTheftDiamond.getVersion().getReleaseType() == ReleaseType.BETA
 							&& Updater.getUpdateVersion1().getReleaseType() == ReleaseType.RELEASE) {
 						p.sendMessage("§cThe new version is a RELEASE. You are still running BETA.");

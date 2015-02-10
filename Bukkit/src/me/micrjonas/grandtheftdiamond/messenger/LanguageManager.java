@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 
@@ -178,7 +178,7 @@ public class LanguageManager {
 				languageFile.save(new File(GrandTheftDiamond.getDataFolder() + File.separator + "language" + File.separator + "english.yml"));
 			} 
 			catch (IOException e) {
-				GrandTheftDiamondPlugin.getInstance().getLogger().warning("Could not save " + language + ".yml");
+				BukkitGrandTheftDiamondPlugin.getInstance().getLogger().warning("Could not save " + language + ".yml");
 				e.printStackTrace();
 			}
 		}

@@ -1,6 +1,6 @@
 package me.micrjonas.grandtheftdiamond.dealer.listener;
 
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.dealer.Dealer;
 import me.micrjonas.grandtheftdiamond.dealer.DealerManager;
 import net.citizensnpcs.api.event.NPCDespawnEvent;
@@ -15,7 +15,7 @@ public class CitizensDealerListener implements Listener {
 	
 	public CitizensDealerListener() {
 		
-		Bukkit.getPluginManager().registerEvents(this, GrandTheftDiamondPlugin.getInstance());
+		Bukkit.getPluginManager().registerEvents(this, BukkitGrandTheftDiamondPlugin.getInstance());
 		
 	}
 

@@ -3,7 +3,7 @@ package me.micrjonas.grandtheftdiamond.item.pluginitem;
 import java.util.HashMap;
 import java.util.Map;
 
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.data.TemporaryPluginData;
@@ -40,7 +40,7 @@ public class Firearms implements Listener {
 	//private final Map<Player, Firearm> lastFirearmZoom = new HashMap<>();
 	
 	Firearms() {
-		Bukkit.getPluginManager().registerEvents(this, GrandTheftDiamondPlugin.getInstance());
+		Bukkit.getPluginManager().registerEvents(this, BukkitGrandTheftDiamondPlugin.getInstance());
 	}
 	
 	private double random(double coord, double power, int accuracy) {

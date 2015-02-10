@@ -36,9 +36,9 @@ class ConfigInizializer {
 	}
 	
 	private void createReadmes() {
-		GrandTheftDiamondPlugin.getInstance().copyFromJar("resources/readme_language.txt", new File(GrandTheftDiamond.getDataFolder() + "/language/readme.txt"), true);
-		GrandTheftDiamondPlugin.getInstance().copyFromJar("resources/readme_listeners.txt", new File(GrandTheftDiamond.getDataFolder() + "/listeners/readme.txt"), true);
-		GrandTheftDiamondPlugin.getInstance().copyFromJar("resources/configuration/config.yml", PluginFile.CONFIG.getFile(), false);
+		BukkitGrandTheftDiamondPlugin.getInstance().copyFromJar("resources/readme_language.txt", new File(GrandTheftDiamond.getDataFolder() + "/language/readme.txt"), true);
+		BukkitGrandTheftDiamondPlugin.getInstance().copyFromJar("resources/readme_listeners.txt", new File(GrandTheftDiamond.getDataFolder() + "/listeners/readme.txt"), true);
+		BukkitGrandTheftDiamondPlugin.getInstance().copyFromJar("resources/configuration/config.yml", PluginFile.CONFIG.getFile(), false);
 	}
 
 	private void addDefaultMessages() {
@@ -558,7 +558,7 @@ class ConfigInizializer {
 		
 		FileConfiguration config = FileManager.getInstance().getFileConfiguration(PluginFile.CONFIG);
 		
-		config.options().header("Configuration file - GrandTheftDiamond - Plugin version: " + GrandTheftDiamondPlugin.getInstance().getDescription().getVersion() + '\n' + 
+		config.options().header("Configuration file - GrandTheftDiamond - Plugin version: " + BukkitGrandTheftDiamondPlugin.getInstance().getDescription().getVersion() + '\n' + 
 				"Gangsters are Civilians with WantedLevel > 0\n." +
 				"Configuration for jail, rob etc. can be found in the file 'event-config.yml.'\n\n" + 
 				"More information: http://micrjonas1997.bplaced.net/grand-theft-diamond/page.php?page=configuration");

@@ -16,7 +16,7 @@ import java.util.UUID;
 import java.util.logging.Level;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.GrandTheftDiamondPlugin;
+import me.micrjonas.grandtheftdiamond.BukkitGrandTheftDiamondPlugin;
 import me.micrjonas.grandtheftdiamond.data.storage.Storable;
 import me.micrjonas.grandtheftdiamond.updater.DataConverter;
 import net.minecraft.util.com.google.common.io.Files;
@@ -76,7 +76,7 @@ public class FileManager {
 	}
 	
 	private void moveData(String from, PluginFile to, String pathFrom, String pathTo, boolean deleteOld) {
-		File fromFile = new File(GrandTheftDiamondPlugin.getInstance().getDataFolder() + File.separator + from + ".yml");
+		File fromFile = new File(BukkitGrandTheftDiamondPlugin.getInstance().getDataFolder() + File.separator + from + ".yml");
 		if (!fromFile.exists()) {
 			return;
 		}
@@ -126,7 +126,7 @@ public class FileManager {
 				return true;
 			} 
 			catch (IOException e) {
-				GrandTheftDiamondPlugin.getInstance().getLogger().warning("Could not move " + from.getName() + " to " + to.getName());
+				BukkitGrandTheftDiamondPlugin.getInstance().getLogger().warning("Could not move " + from.getName() + " to " + to.getName());
 				e.printStackTrace();
 			}
 		}
@@ -156,12 +156,12 @@ public class FileManager {
 			f.getParentFile().mkdirs();
 			f.createNewFile();
 			if (broadcast) {
-				GrandTheftDiamondPlugin.getInstance().getLogger().info(f.getPath() + " created");
+				BukkitGrandTheftDiamondPlugin.getInstance().getLogger().info(f.getPath() + " created");
 			}
 			return true;
 		}
 		catch (IOException ex) {
-			GrandTheftDiamondPlugin.getInstance().getLogger().warning("Could not create " + f.getPath());
+			BukkitGrandTheftDiamondPlugin.getInstance().getLogger().warning("Could not create " + f.getPath());
 			ex.printStackTrace();
 			return false;
 		}
@@ -180,7 +180,7 @@ public class FileManager {
 				return true;
 			} 
 			catch (IOException e) {
-				GrandTheftDiamondPlugin.getInstance().getLogger().warning("Could not save " + f.getName());
+				BukkitGrandTheftDiamondPlugin.getInstance().getLogger().warning("Could not save " + f.getName());
 				e.printStackTrace();
 			}
 		}
@@ -194,7 +194,7 @@ public class FileManager {
 	 */
 	@SuppressWarnings("deprecation")
 	public boolean saveFileConfiguration(PluginFile type) {
-		GrandTheftDiamondPlugin.getInstance().saveData(type);
+		BukkitGrandTheftDiamondPlugin.getInstance().saveData(type);
 		return saveConfiguration(getFileConfiguration(type), type.getFile());
 	}
 	
@@ -250,7 +250,7 @@ public class FileManager {
 					GrandTheftDiamond.getLogger().log(Level.SEVERE, "The file was recreated. The broken file was moved to " + newFileName);
 				}
 				if (renamed && jarFallback != null) {
-					GrandTheftDiamondPlugin.getInstance().copyFromJar(jarFallback, file, true);
+					BukkitGrandTheftDiamondPlugin.getInstance().copyFromJar(jarFallback, file, true);
 					return getFileConfiguration(file, null);
 				}
 				else {
@@ -279,7 +279,7 @@ public class FileManager {
 		createFileIfNotExists(type.getFile());
 		dataFiles.put(type, getFileConfiguration(type.getFile(), type.getJarPath()));
 		if (!startup) {
-			GrandTheftDiamondPlugin.getInstance().fileReloaded(type);
+			BukkitGrandTheftDiamondPlugin.getInstance().fileReloaded(type);
 		}
 	}
 	
@@ -343,7 +343,7 @@ public class FileManager {
 	 * @return The loaded player data represented as {@code FileConfiguration}
 	 */
 	public FileConfiguration loadPlayerData(UUID playerId) {
-		File f = new File(GrandTheftDiamondPlugin.getInstance().getDataFolder() + "/userdata", playerId.toString() + ".yml");
+		File f = new File(BukkitGrandTheftDiamondPlugin.getInstance().getDataFolder() + "/userdata", playerId.toString() + ".yml");
 		createFileIfNotExists(f);
 		FileConfiguration config = YamlConfiguration.loadConfiguration(f);
 		playerData.put(playerId, config);
@@ -375,7 +375,7 @@ public class FileManager {
 	 */
 	@SuppressWarnings("deprecation")
 	public FileConfiguration getPlayerData(String player) {
-		OfflinePlayer p = GrandTheftDiamondPlugin.getInstance().getServer().getOfflinePlayer(player);
+		OfflinePlayer p = BukkitGrandTheftDiamondPlugin.getInstance().getServer().getOfflinePlayer(player);
 		if (p.isOnline()) {
 			return getPlayerData(p.getPlayer());
 		}
