@@ -30,9 +30,9 @@ import org.bukkit.entity.Player;
 
 
 /**
- * This class provides a skeletal implementation of {@link GrandTheftDiamondPluginInt}
+ * This class provides a skeletal implementation of {@link GrandTheftDiamondPlugin}
  */
-public abstract class AbstractGrandTheftDiamondPlugin implements GrandTheftDiamondPluginInt {
+public abstract class AbstractGrandTheftDiamondPlugin implements GrandTheftDiamondPlugin {
 	
 	private final Map<String, CommandExecutor> commands = new HashMap<>();
 	private final Set<PlayerDataUser> playerDataUser = new HashSet<>();
