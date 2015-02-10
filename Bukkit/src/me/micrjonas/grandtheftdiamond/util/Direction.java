@@ -40,6 +40,36 @@ public class Direction implements Immutable {
 		this.pitch = (float) Math.toDegrees(Math.asin(Math.sin(Math.toRadians(pitch)))); // Makes 100° to 80° and 460° to 80°
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Float.floatToIntBits(pitch);
+		result = prime * result + Float.floatToIntBits(rotation);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Direction other = (Direction) obj;
+		if (Float.floatToIntBits(pitch) != Float.floatToIntBits(other.pitch)) {
+			return false;
+		}
+		if (Float.floatToIntBits(rotation) != Float.floatToIntBits(other.rotation)) {
+			return false;
+		}
+		return true;
+	}
+
 	/**
 	 * Returns the rotation value of the {@code Direction}
 	 * @return The rotation value
