@@ -1,6 +1,7 @@
 package me.micrjonas.grandtheftdiamond.command;
 
 import java.util.Collection;
+
 import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.messenger.LanguageManager;

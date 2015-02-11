@@ -11,7 +11,7 @@ import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
 import me.micrjonas.grandtheftdiamond.messenger.NoPermissionType;
 import me.micrjonas.grandtheftdiamond.util.Enums;
-import me.micrjonas.grandtheftdiamond.util.Nameables;
+import me.micrjonas.util.Nameables;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;

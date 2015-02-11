@@ -10,11 +10,11 @@ import java.util.Set;
 
 import me.micrjonas.grandtheftdiamond.data.storage.Storable;
 import me.micrjonas.grandtheftdiamond.jail.Jail;
-import me.micrjonas.grandtheftdiamond.util.Nameable;
 import me.micrjonas.grandtheftdiamond.util.SquareLocation;
 import me.micrjonas.grandtheftdiamond.util.bukkit.Locations;
 import me.micrjonas.grandtheftdiamond.util.bukkit.WorldStorage;
 import me.micrjonas.grandtheftdiamond.util.collection.Collections;
+import me.micrjonas.util.Nameable;
 
 import org.bukkit.Location;
 import org.bukkit.World;

@@ -14,9 +14,9 @@ import me.micrjonas.grandtheftdiamond.inventory.merchant.Offer;
 import me.micrjonas.grandtheftdiamond.item.pluginitem.ItemManager;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
 import me.micrjonas.grandtheftdiamond.messenger.NoPermissionType;
-import me.micrjonas.grandtheftdiamond.util.Nameable;
 import me.micrjonas.grandtheftdiamond.util.bukkit.Locations;
 import me.micrjonas.grandtheftdiamond.util.bukkit.WorldStorage;
+import me.micrjonas.util.Nameable;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

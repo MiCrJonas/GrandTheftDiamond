@@ -3,7 +3,7 @@ package me.micrjonas.grandtheftdiamond.data;
 import java.io.File;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.util.Nameable;
+import me.micrjonas.util.Nameable;
 
 /**
  * Represents a file used by the plugin

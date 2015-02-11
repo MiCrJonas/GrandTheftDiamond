@@ -9,7 +9,7 @@ import me.micrjonas.grandtheftdiamond.jail.Jail;
 import me.micrjonas.grandtheftdiamond.jail.JailManager;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
 import me.micrjonas.grandtheftdiamond.messenger.NoPermissionType;
-import me.micrjonas.grandtheftdiamond.util.Nameables;
+import me.micrjonas.util.Nameables;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

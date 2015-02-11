@@ -1,6 +1,6 @@
 package me.micrjonas.grandtheftdiamond.item.pluginitem;
 
-import me.micrjonas.grandtheftdiamond.util.Nameable;
+import me.micrjonas.util.Nameable;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;

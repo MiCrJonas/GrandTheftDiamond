@@ -9,7 +9,7 @@ import java.util.Map.Entry;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.data.storage.Storable;
-import me.micrjonas.grandtheftdiamond.util.Nameable;
+import me.micrjonas.util.Nameable;
 
 import org.bukkit.OfflinePlayer;
 

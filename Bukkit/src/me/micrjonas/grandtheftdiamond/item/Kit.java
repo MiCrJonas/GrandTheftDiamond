@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import me.micrjonas.grandtheftdiamond.util.Nameable;
+import me.micrjonas.util.Nameable;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

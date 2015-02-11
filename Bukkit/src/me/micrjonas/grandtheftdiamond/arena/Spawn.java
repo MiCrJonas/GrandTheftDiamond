@@ -3,7 +3,7 @@ package me.micrjonas.grandtheftdiamond.arena;
 import me.micrjonas.grandtheftdiamond.pluginsupport.dynmap.DynmapDisplayable;
 import me.micrjonas.grandtheftdiamond.pluginsupport.dynmap.MarkerSymbol;
 import me.micrjonas.grandtheftdiamond.util.Immutable;
-import me.micrjonas.grandtheftdiamond.util.Nameable;
+import me.micrjonas.util.Nameable;
 
 import org.bukkit.Location;
 

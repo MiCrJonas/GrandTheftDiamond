@@ -2,6 +2,7 @@ package me.micrjonas.grandtheftdiamond.command;
 
 import java.util.Arrays;
 import java.util.Collection;
+
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.chat.ChatManager;
 import me.micrjonas.grandtheftdiamond.chat.ChatMode;

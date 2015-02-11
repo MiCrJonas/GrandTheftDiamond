@@ -7,8 +7,8 @@ import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.manager.ChatManager;
-import me.micrjonas.grandtheftdiamond.util.Nameable;
 import me.micrjonas.grandtheftdiamond.util.StringUtils;
+import me.micrjonas.util.Nameable;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

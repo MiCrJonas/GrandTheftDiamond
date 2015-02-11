@@ -16,7 +16,7 @@ import me.micrjonas.grandtheftdiamond.gang.GangManager;
 import me.micrjonas.grandtheftdiamond.gang.GangOption;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
 import me.micrjonas.grandtheftdiamond.messenger.NoPermissionType;
-import me.micrjonas.grandtheftdiamond.util.Nameables;
+import me.micrjonas.util.Nameables;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;

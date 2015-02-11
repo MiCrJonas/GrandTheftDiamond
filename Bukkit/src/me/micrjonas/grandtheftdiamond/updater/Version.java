@@ -3,7 +3,7 @@ package me.micrjonas.grandtheftdiamond.updater;
 import java.util.Arrays;
 
 import me.micrjonas.grandtheftdiamond.util.Immutable;
-import me.micrjonas.grandtheftdiamond.util.Nameable;
+import me.micrjonas.util.Nameable;
 
 
 /**

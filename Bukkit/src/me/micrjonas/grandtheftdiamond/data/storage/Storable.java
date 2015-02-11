@@ -2,7 +2,7 @@ package me.micrjonas.grandtheftdiamond.data.storage;
 
 import java.util.Map;
 
-import me.micrjonas.grandtheftdiamond.util.Nameable;
+import me.micrjonas.util.Nameable;
 
 /**
  * A class which represents an object you can store to a file implement this interface
