@@ -1,8 +1,5 @@
 package me.micrjonas.grandtheftdiamond;
 
-
-
-
 /**
  * Team of GrandTheftDiamond
  */
