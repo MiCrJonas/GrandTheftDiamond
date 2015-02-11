@@ -3,7 +3,7 @@ package me.micrjonas.grandtheftdiamond.util.bukkit;
 import java.util.concurrent.TimeUnit;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.util.Utils;
+import me.micrjonas.util.Utils;
 
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.potion.PotionEffect;

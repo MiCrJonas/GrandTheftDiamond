@@ -4,8 +4,8 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
-import me.micrjonas.grandtheftdiamond.util.Utils;
 import me.micrjonas.grandtheftdiamond.util.bukkit.PotionEffects;
+import me.micrjonas.util.Utils;
 
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
