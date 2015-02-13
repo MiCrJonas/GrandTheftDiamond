@@ -21,7 +21,7 @@ import me.micrjonas.grandtheftdiamond.data.storage.Storable;
 import me.micrjonas.grandtheftdiamond.data.storage.StorableManager;
 import me.micrjonas.grandtheftdiamond.data.storage.Storables;
 import me.micrjonas.grandtheftdiamond.messenger.NoPermissionType;
-import me.micrjonas.grandtheftdiamond.updater.Version;
+import me.micrjonas.util.Version;
 import me.micrjonas.minecraft.command.CommandSource;
 
 import org.bukkit.command.CommandSender;

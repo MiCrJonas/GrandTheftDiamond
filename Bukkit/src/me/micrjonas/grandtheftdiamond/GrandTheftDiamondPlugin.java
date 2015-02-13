@@ -4,7 +4,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-import java.util.logging.Logger;
 
 import me.micrjonas.grandtheftdiamond.command.CommandExecutor;
 import me.micrjonas.grandtheftdiamond.data.FileManager;
@@ -14,8 +13,8 @@ import me.micrjonas.grandtheftdiamond.data.player.PlayerDataUser;
 import me.micrjonas.grandtheftdiamond.data.storage.Storable;
 import me.micrjonas.grandtheftdiamond.data.storage.StorableManager;
 import me.micrjonas.grandtheftdiamond.messenger.NoPermissionType;
-import me.micrjonas.grandtheftdiamond.updater.Version;
 import me.micrjonas.minecraft.command.CommandSource;
+import me.micrjonas.minecraft.server.plugin.ServerPlugin;
 
 import org.bukkit.command.CommandSender;
 
@@ -23,20 +22,7 @@ import org.bukkit.command.CommandSender;
 /**
  * Interface to mark the main class of GrandTheftDiamond for a specific server-software implementation
  */
-public interface GrandTheftDiamondPlugin {
-	
-	/**
-	 * Returns the plugin logger. May be associated with the server's logger
-	 * @return The plugin logger. May be associated with the server's logger.
-	 * 	The returned logger automatically tags all log messages with the plugin's name
-	 */
-	Logger getLogger();
-	
-	/**
-	 * Returns the {@link Version} of the plugin
-	 * @return The {@link Version} of the plugin
-	 */
-	Version getVersion();
+public interface GrandTheftDiamondPlugin extends ServerPlugin {
 	
 	/**
 	 * Checks whether the sender has the given permissions.

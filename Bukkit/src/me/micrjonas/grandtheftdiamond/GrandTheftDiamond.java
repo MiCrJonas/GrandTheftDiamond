@@ -33,7 +33,7 @@ import me.micrjonas.grandtheftdiamond.messenger.NoPermissionType;
 import me.micrjonas.grandtheftdiamond.rob.RobManager;
 import me.micrjonas.grandtheftdiamond.sign.SignManager;
 import me.micrjonas.grandtheftdiamond.updater.ChangeLog;
-import me.micrjonas.grandtheftdiamond.updater.Version;
+import me.micrjonas.util.Version;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;

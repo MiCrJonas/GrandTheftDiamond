@@ -101,7 +101,7 @@ import me.micrjonas.grandtheftdiamond.stats.board.StatsBoardManager;
 import me.micrjonas.grandtheftdiamond.updater.ChangeLog;
 import me.micrjonas.grandtheftdiamond.updater.DataConverter;
 import me.micrjonas.grandtheftdiamond.updater.Updater;
-import me.micrjonas.grandtheftdiamond.updater.Version;
+import me.micrjonas.util.Version;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
