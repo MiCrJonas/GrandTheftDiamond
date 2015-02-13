@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
+import me.micrjonas.util.Version;
 
 import org.apache.commons.lang.StringEscapeUtils;
 

@@ -8,8 +8,8 @@ import me.micrjonas.grandtheftdiamond.data.FileManager;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
 import me.micrjonas.grandtheftdiamond.manager.NametagManager;
 import me.micrjonas.grandtheftdiamond.messenger.Messenger;
-import me.micrjonas.grandtheftdiamond.updater.ReleaseType;
 import me.micrjonas.grandtheftdiamond.updater.Updater;
+import me.micrjonas.util.ReleaseType;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

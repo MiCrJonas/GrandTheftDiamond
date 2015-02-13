@@ -17,6 +17,8 @@ import java.util.zip.ZipFile;
 
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.bukkit.BukkitGrandTheftDiamondPlugin;
+import me.micrjonas.util.ReleaseType;
+import me.micrjonas.util.Version;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;

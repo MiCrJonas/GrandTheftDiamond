@@ -5,7 +5,7 @@ import java.io.File;
 import me.micrjonas.grandtheftdiamond.GrandTheftDiamond;
 import me.micrjonas.grandtheftdiamond.data.FileReloadListener;
 import me.micrjonas.grandtheftdiamond.data.PluginFile;
-import me.micrjonas.grandtheftdiamond.updater.ReleaseType;
+import me.micrjonas.util.ReleaseType;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
